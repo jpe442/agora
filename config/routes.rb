@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'static_pages/root'
+
   namespace :api do
     get 'users/new'
   end
