@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'users/new'
+  end
+
+  namespace :api do
+    get 'users/create'
+  end
+
+  namespace :api do
+    get 'users/destroy'
+  end
+
   get 'sessions/new'
 
   get 'sessions/create'
