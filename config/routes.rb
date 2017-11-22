@@ -1,37 +1,24 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'sessions/new'
+  end
+
+  namespace :api do
+    get 'sessions/create'
+  end
+
+  namespace :api do
+    get 'sessions/destroy'
+  end
+
   get 'static_pages/root'
 
-  namespace :api do
-    get 'users/new'
+  namespace :api, defaults: {format: :json} do
+    resource :session, only: [:new, :create, :destory]
+    resources :users, only: [:new, :create]
   end
 
-  namespace :api do
-    get 'users/create'
-  end
-
-  namespace :api do
-    get 'users/destroy'
-  end
-
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
-  get 'users/new'
-
-  get 'users/create'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/show'
-
-  get 'users/destroy'
-
-  get 'users/index'
+  root "static_pages#root"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
