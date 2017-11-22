@@ -7,6 +7,7 @@
 // Include devtool: 'source-map'.
 // git commit again(Verify that your.gitignore works).
 // git push your skeleton.
+var path = require("path")
 
 module.exports = {
   context: __dirname,
