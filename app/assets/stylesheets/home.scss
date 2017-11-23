@@ -1,0 +1,21 @@
+.tagline {
+  color: #FFFAF0;
+  
+  font-size: 380%;
+  letter-spacing: 4px;
+  position: absolute;
+  top: calc(25% - 20px);
+  left: calc(50% - 200px);
+}
+
+.acro-img {
+  // display: inline-block;
+  padding-top: 10px;
+  height: 720px;
+  overflow: hidden; 
+}
+
+.acro-jpg {
+  object-fit: cover;
+  height: 1200px;
+}

@@ -1,0 +1,28 @@
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid 1px rgb(57, 38, 179);
+  margin: 20px;
+}
+
+.logo {
+  font-family: 'Crimson Text', serif;
+  font-size: 26px;
+  letter-spacing: 3px;
+  margin: 10px 20px 20px 15px;
+
+}
+
+.authlinks {
+  font-size: 24px;
+  justify-content: space-around;
+  margin: 10px 20px;
+
+}
+
+.authlink {
+  font-size: 18px;
+  font-family: 'Crimson Text', serif;
+  margin-left: 20px;
+}

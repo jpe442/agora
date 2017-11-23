@@ -1,6 +1,6 @@
 body {
   background-color: #FFFAF0;
-  color: darkslategray;
+  color: darkslateblue;
 }
 
 .backsplash img{
@@ -13,6 +13,8 @@ body {
 img {
   opacity: 0.95;
   filter: alpha(opacity=50);
+  width: 100%;
+  background-size: cover;
 } 
 
 .title {

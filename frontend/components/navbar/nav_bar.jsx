@@ -15,7 +15,7 @@ export default ({ currentUser, logout }) => {
     );
   return (
     <header className="nav-bar">
-      <h1 className="logo">Agora</h1>
+      <h2 className="logo">Agora</h2>
       <div>
         {display}
       </div>
