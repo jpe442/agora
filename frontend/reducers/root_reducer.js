@@ -1,6 +1,6 @@
 import sessionReducer from './session_reducer';
 import errorsReducer from './errors_reducer';
-import { combineReducers } from './node_modules/redux/index';
+import { combineReducers } from 'redux';
 
 export default combineReducers({
   session: sessionReducer,
