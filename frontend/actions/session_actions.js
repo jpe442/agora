@@ -6,11 +6,9 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS'
 // thunks
 
 export const login = (user) => dispatch => (
-  SessionAPIUtil.login(user).then(user => (
-    dispatch(receiveCurrentUser(user))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
-  ))
+  SessionAPIUtil.login(user)
+  .fail(err => (dispatch(receiveErrors(err.responseJSON))))
+  .then(user => (dispatch(receiveCurrentUser(user))))
 );
 
 
@@ -22,11 +20,10 @@ export const logout = () => (
 
 
 export const signup = (user) => dispatch => (
-  SessionAPIUtil.signup(user).then(user => (
-    dispatch(receiveCurrentUser(user))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
-  ))
+  SessionAPIUtil.signup(user)
+   .fail(err => (dispatch(receiveErrors(err.responseJSON))))
+  // .fail(err => console.log(err))
+  .then(user => (dispatch(receiveCurrentUser(user))))
 );
 
 // reg actions

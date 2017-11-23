@@ -8,9 +8,9 @@ export default ({ currentUser, logout }) => {
       <button onClick={logout}>Logout</button>
     </div>
   ) : (
-      <div>
-        <Link className="btn" to="/signup">Sign Up</Link>
-        <Link className="btn" to="/login">Log In</Link>
+      <div className="authlinks">
+        <Link className="authlink" to="/signup">Sign Up</Link> 
+        <Link className="authlink" to="/login">Log In</Link>
       </div>
     );
   return (
