@@ -1,7 +1,7 @@
 .tagline {
   color: #FFFAF0;
   
-  font-size: 380%;
+  font-size: 400%;
   letter-spacing: 4px;
   position: absolute;
   top: calc(25% - 20px);
@@ -10,7 +10,7 @@
 
 .acro-img {
   // display: inline-block;
-  padding-top: 10px;
+  padding-top: 5\\px;
   height: 720px;
   overflow: hidden; 
 }
@@ -18,4 +18,12 @@
 .acro-jpg {
   object-fit: cover;
   height: 1200px;
+}
+
+.footer {
+  border-top: solid 1px rgb(57, 38, 179);
+  font-size: 12px;
+  padding-top: 10px;
+  padding-left: 15px;
+  margin: 20px;
 }

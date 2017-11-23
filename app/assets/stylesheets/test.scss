@@ -11,8 +11,8 @@ body {
 }
 
 img {
-  opacity: 0.95;
-  filter: alpha(opacity=50);
+  // opacity: 0.1;
+  filter: alpha(opacity=10);
   width: 100%;
   background-size: cover;
 } 
