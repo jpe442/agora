@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+
 
 export default ({ currentUser, logout }) => {
   const display = currentUser ? (
@@ -9,8 +10,14 @@ export default ({ currentUser, logout }) => {
     </div>
   ) : (
       <div className="authlinks">
-        <Link className="authlink" to="/signup">Sign Up</Link> 
-        <Link className="authlink" to="/login">Log In</Link>
+
+        <NavLink className="authlink" to="/signup">
+          Sign Up
+        </NavLink> 
+        <NavLink className="authlink" to="/login">
+          Login
+        </NavLink>
+
       </div>
     );
   return (

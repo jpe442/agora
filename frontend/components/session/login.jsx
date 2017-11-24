@@ -27,7 +27,7 @@ class Login extends React.Component {
     // console.log(this.props);
     return (
       <div className="session-form">
-        <h2>Log In!</h2>
+        <h2 className="loginmsg">Enter Agora</h2>
         <form>
           <label>Username:
           <input type="text"
