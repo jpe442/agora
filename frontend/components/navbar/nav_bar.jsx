@@ -4,9 +4,9 @@ import { Link, NavLink } from 'react-router-dom';
 
 export default ({ currentUser, logout }) => {
   const display = currentUser ? (
-    <div>
-      <h3 className="welcome">{currentUser.username} is logged in</h3>
-      <button onClick={logout}>Logout</button>
+    <div className="welcome">
+      <div className="userThumb">{currentUser.username}</div>
+      <div className="authlink" onClick={logout}>Exit Agora</div>
     </div>
   ) : (
       <div className="authlinks">
