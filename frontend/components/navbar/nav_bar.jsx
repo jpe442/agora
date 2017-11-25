@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Modal from 'react-modal';
-import { AuthRoute, ProtectedRoute } from '../../util/route_util';
+// import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 import SignupContainer from '../session/signup_container';
+import LoginContainer from '../session/login_container'
 
-export default ({ currentUser, logout, toggleModal, openModal }) => {
+export default ({ currentUser, logout, toggleLoginModal, toggleSignUpModal, openSignUpModal, openLoginModal }) => {
   
   const display = currentUser ? (
     <div className="welcome">
@@ -14,21 +15,29 @@ export default ({ currentUser, logout, toggleModal, openModal }) => {
   ) : (
       <div className="authlinks">
 
-        <div className="authlink" onClick={toggleModal}>
+        <div className="authlink" onClick={toggleSignUpModal}>
           Sign Up
         </div> 
-        <NavLink className="authlink" to="/login">
-          Login 
-        </NavLink>
+        <div className="authlink" onClick={toggleLoginModal}>
+          Login
+        </div> 
 
         <Modal
           className="authModal"
-          isOpen={openModal}
-          onRequestClose={toggleModal}
+          isOpen={openSignUpModal}
+          onRequestClose={toggleSignUpModal}
           >
-          <div className="cancelbtn" onClick={toggleModal}>X</div>
-          {/* <AuthRoute path="/signup" component={SignupContainer} /> */}
+          <div className="cancelbtn" onClick={toggleSignUpModal}>X</div>
           <SignupContainer />
+        </Modal>
+
+        <Modal
+          className="authModal"
+          isOpen={openLoginModal}
+          onRequestClose={toggleLoginModal}
+        >
+          <div className="cancelbtn" onClick={toggleLoginModal}>X</div>
+          <LoginContainer />
         </Modal>
       </div>
     );
