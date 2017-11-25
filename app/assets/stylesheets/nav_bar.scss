@@ -1,3 +1,4 @@
+
 .nav-bar {
   display: flex;
   flex-direction: row;
@@ -49,6 +50,14 @@
   }
 }
 
+.cancelbtn {
+
+  &:hover {
+    // background-color: white;
+    cursor: pointer;
+  }
+}
+
 .welcome {
 
   font-size: 20px;
@@ -72,4 +81,16 @@
   margin: auto;
   vertical-align: middle;
 
+}
+
+.authModal {
+  display: flex;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  top: 20%;
+  left: 31%;
+  // align-items: center;
+  width: 40%;
+  height: 25%;
+  margin: auto;
 }
