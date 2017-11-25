@@ -8,6 +8,7 @@ class Signup extends React.Component {
       email: "",
       password: "",
     };
+    this.errors = this.props.autherrors
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -29,7 +30,6 @@ class Signup extends React.Component {
     return (
       <div className="session-form">
         <h2>Sign Up</h2>
-
         <form>
           <label>Username:
           <input
@@ -48,6 +48,13 @@ class Signup extends React.Component {
               onChange={this.handleInput('password')} />
             <button onClick={this.handleSubmit}>Sign Up!</button></label>
         </form>
+        <ul>Errors:
+          {
+            this.props.autherrors.map((error, idx) => (
+              <li key = {idx}>{error}</li>
+            ))
+          }
+        </ul>
       </div>
     )
   }
