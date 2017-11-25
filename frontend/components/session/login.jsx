@@ -21,7 +21,7 @@ class Login extends React.Component {
     console.log(this.props)
     e.preventDefault();
     this.props.login(this.state)
-      .then(() => this.props.toggleLoginModal);
+      .then(() => this.props.toggleLoginModal());
   }
 
   render() {

@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   login: formUser => dispatch(login(formUser)),
-  toggleLoginModal:() => dispatch(toggleLoginModal)
+  toggleLoginModal:() => dispatch(toggleLoginModal())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

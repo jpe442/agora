@@ -21,7 +21,7 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.signup(this.state)
-      .then(() => this.props.toggleSignUpModal);
+      .then(() => this.props.toggleSignUpModal());
   }
 
   render() {

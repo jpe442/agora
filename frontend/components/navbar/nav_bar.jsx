@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Modal from 'react-modal';
 // import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 import SignupContainer from '../session/signup_container';
@@ -21,7 +21,7 @@ export default ({ currentUser, logout, toggleLoginModal, toggleSignUpModal, open
         <div className="authlink" onClick={toggleLoginModal}>
           Login
         </div> 
-
+        
         <Modal
           className="authModal"
           isOpen={openSignUpModal}
