@@ -11,21 +11,17 @@ export const login = (user) => dispatch => (
   .then(user => (dispatch(receiveCurrentUser(user))))
 );
 
-
-export const logout = () => (
-  SessionAPIUtil.logout().then(user => (
-    dispatch(receiveCurrentUser(null))
-  ))
-);
-
-
 export const signup = (user) => dispatch => (
   SessionAPIUtil.signup(user)
    .fail(err => (dispatch(receiveErrors(err.responseJSON))))
-  // .fail(err => console.log(err))
   .then(user => (dispatch(receiveCurrentUser(user))))
 );
 
+export const logout = () => (
+  SessionAPIUtil.logout().then(() => (
+    dispatch(receiveCurrentUser(null))
+  ))
+);
 // reg actions
 
 export const receiveCurrentUser = (currentUser) => ({

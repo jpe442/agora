@@ -18,9 +18,10 @@ class Login extends React.Component {
   }
 
   handleSubmit(e) {
+    console.log(this.props)
     e.preventDefault();
     this.props.login(this.state)
-      .then(() => this.props.history.push('/'));
+      .then(() => this.props.toggleLoginModal);
   }
 
   render() {
@@ -38,8 +39,8 @@ class Login extends React.Component {
           <input type="password"
               value={this.state.password}
               onChange={this.handleInput('password')} />
-
-            <button onClick={this.handleSubmit}>Log In</button></label>
+          </label>
+            <button onClick={this.handleSubmit}>Log In</button>
         </form>
       </div>
     )
