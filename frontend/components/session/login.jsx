@@ -29,24 +29,27 @@ class Login extends React.Component {
     // console.log(this.props);
     return (
       <div className="session-form">
-        <h2 className="loginmsg">Enter Agora</h2>
+        <h2 className="loginmsg">Agora</h2>
         <form>
-          <label>Username:
-          <input type="text"
+          <label className="username-session">Username:
+          <input 
+              className="username-input"
+              type="text"
               value={this.state.username}
               onChange={this.handleInput('username')} /></label>
 
-          <label>Password:
+          <label className="password-login">Password:
           <input type="password"
               value={this.state.password}
               onChange={this.handleInput('password')} />
           </label>
-            <button onClick={this.handleSubmit}>Log In</button>
+            <div className="session-submit" onClick={this.handleSubmit}>Enter</div>
         </form>
-        <ul>Errors:
+        <ul className="session-report">
           {
             this.props.autherrors.map((error, idx) => (
-              <li key={idx}>{error}</li>
+              <li key={idx} className="session-errors">{error}
+              </li>
             ))
           }
         </ul>

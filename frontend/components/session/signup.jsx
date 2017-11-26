@@ -30,29 +30,30 @@ class Signup extends React.Component {
     // console.log(this.props);
     return (
       <div className="session-form">
-        <h2>Sign Up</h2>
+        <h2 className="loginmsg">Register</h2>
         <form>
-          <label>Username:
+          <label className="username-session">Username:
           <input
               type="text"
               value={this.state.username}
               onChange={this.handleInput('username')} /></label>
-          <label>Email:
+          <label className="user-email">Email:
           <input
               type="text"
               value={this.state.email}
               onChange={this.handleInput('email')} /></label>
-          <label>Password:
+          <label className="password-signup">Password:
           <input
               type="password"
               value={this.state.password}
               onChange={this.handleInput('password')} />
-            <button onClick={this.handleSubmit}>Sign Up!</button></label>
+            </label>
+          <div className="session-submit" onClick={this.handleSubmit}>Register</div>
         </form>
-        <ul>Errors:
+        <ul className="session-report">
           {
             this.props.autherrors.map((error, idx) => (
-              <li key = {idx}>{error}</li>
+              <li className="session-errors" key = {idx}>{error}</li>
             ))
           }
         </ul>

@@ -1,0 +1,82 @@
+.session-form {
+  color: darkslateblue;
+  display: flex;
+  // justify-content: space-around;
+  // position: absolute;
+  letter-spacing: 2px;
+
+}
+
+.loginmsg {
+  position: absolute;
+  font-size: 150%;
+  letter-spacing: 3px;
+  top: 10%;
+  left: 5%;
+}
+
+.password-login {
+  position: absolute;
+  top: 65%;
+  left: 5%;
+}
+
+.password-signup {
+  position: absolute;
+  left: 5%;
+  top: 55%;
+}
+
+.password-input {
+  position: absolute;
+  top: 10%;
+  left: 100%
+}
+.username-session {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  letter-spacing: 5%;
+}
+
+.username-input {
+  position: absolute;
+  left: 100%;
+  top: 25%;
+}
+
+.user-email {
+  position: absolute;
+  left: 5%;
+  top: 70%;
+}
+
+.session-report {
+  position: absolute;
+  left: 35%;
+  top: 5%;
+}
+
+.session-errors {
+  color: red;
+}
+
+.session-submit {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  position: absolute;
+  left: 65%;
+  letter-spacing: 3px;
+  bottom: 10%;
+  // border: 1px solid darkslateblue;
+  background-color: rgba(92, 89, 89, .2);
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(72, 61, 139, .2);
+  }
+}
+
+

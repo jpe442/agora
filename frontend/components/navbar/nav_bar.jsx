@@ -28,10 +28,10 @@ export default ({ currentUser, logout, clearSessionErrors, toggleLoginModal, tog
   ) : (
       <div className="authlinks">
         <div className="authlink" onClick={toggleSignUpModal}>
-          Sign Up
+          Register
         </div> 
         <div className="authlink" onClick={toggleLoginModal}>
-          Login
+          Enter Agora
         </div> 
         
         <Modal
