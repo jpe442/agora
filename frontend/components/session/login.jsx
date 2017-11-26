@@ -31,14 +31,14 @@ class Login extends React.Component {
       <div className="session-form">
         <h2 className="loginmsg">Agora</h2>
         <form>
-          <label className="username-session">Username:
+          <label className="username-session">Username:  
           <input 
               className="username-input"
               type="text"
               value={this.state.username}
               onChange={this.handleInput('username')} /></label>
 
-          <label className="password-login">Password:
+          <label className="password-login">Password: 
           <input type="password"
               value={this.state.password}
               onChange={this.handleInput('password')} />

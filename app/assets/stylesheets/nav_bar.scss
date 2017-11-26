@@ -3,27 +3,30 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: solid 1px darkslateblue;
-  margin-bottom: 20px;
+  border-bottom: dotted 1px darkslateblue;
+  margin-bottom: 15px;
 }
 
 .logo {
   font-family: 'Crimson Text', serif;
   font-size: 26px;
+  font-weight: 900;
   letter-spacing: 3px;
-  margin: 10px 20px 10px 50px;
+  margin: 10px 20px 10px 80px;
   vertical-align: middle;
-  line-height: 50px;
+  line-height: 30px;
 
 }
 
 .authlinks {
   // border-left: solid 1px rgb(57, 38, 179);
   font-size: 20px;
+  font-weight: 500;
   height: 100%;
   display: flex;
   justify-content: space-between;
   width: 300px;
+  
 
  .active {
     background-color: whitesmoke;
@@ -31,12 +34,11 @@
 }
 
 .authlink {
-  border-left: solid 1px darkslateblue;
-  font-size: 18px;
+  border-left: dotted 1px darkslateblue;
   font-family: 'Crimson Text', serif;
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: 2px;
-  line-height: 70px;
+  line-height: 50px;
   height: 100%;
   width: 100%;
   word-spacing: 2px;
@@ -51,7 +53,6 @@
 }
 
 .welcome {
-
   font-size: 20px;
   height: 100%;
   display: flex;
@@ -66,7 +67,7 @@
   font-family: 'Crimson Text', serif;
   font-size: 16px;
   letter-spacing: 3px;
-  line-height: 70px;
+  line-height: 50px;
   height: 100%;
   width: 100%;
   text-align: center;
@@ -76,6 +77,7 @@
 }
 
 .authModal {
+  border-radius: 2%;
   display: flex;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.85);
@@ -92,9 +94,9 @@
   color: grey;
   display: flex;
   position: absolute;
-  top: 1%;
+  top: 2%;
   right: 1%;
-  ;
+  z-index: 3px;
 
   &:hover {
     cursor: pointer;
