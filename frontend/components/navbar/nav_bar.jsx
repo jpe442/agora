@@ -42,6 +42,7 @@ export default ({ currentUser, logout, clearSessionErrors, toggleLoginModal, tog
           <div className="cancelbtn" onClick={clearSignUpToggle}>X</div>
           <SignupContainer />
         </Modal>
+        
         <Modal
           className="authModal"
           isOpen={openLoginModal}

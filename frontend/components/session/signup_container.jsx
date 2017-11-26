@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signup, clearSessionErrors } from '../../actions/session_actions';
+import { signup, login, clearSessionErrors } from '../../actions/session_actions';
 import { toggleSignUpModal } from '../../actions/ui_actions';
 import Signup from './signup';
 
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   signup: formUser => dispatch(signup(formUser)),
+  login: formUser => dispatch(login(formUser)),
   toggleSignUpModal: () => dispatch(toggleSignUpModal()),
   clearSessionErrors: () => dispatch(clearSessionErrors()),
 });

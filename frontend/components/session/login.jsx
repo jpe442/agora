@@ -9,6 +9,7 @@ class Login extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuest = this.handleGuest.bind(this);
   }
 
   handleInput(type) {
@@ -18,15 +19,24 @@ class Login extends React.Component {
   }
 
   handleSubmit(e) {
-    console.log(this.props)
-    e.preventDefault();
+    e.preventDefault(e);
     this.props.login(this.state)
       .then(() => this.props.toggleLoginModal())
        .then(() => this.props.clearSessionErrors());
   }
 
+  handleGuest(e) {
+    e.preventDefault(e);
+    this.state = {
+      username: "guest",
+      password: "guestpassword"
+    }
+    this.props.login(this.state)
+      .then(() => this.props.toggleLoginModal())
+      .then(() => this.props.clearSessionErrors());
+  }
+
   render() {
-    // console.log(this.props);
     return (
       <div className="session-form">
         <h2 className="loginmsg">Agora</h2>
@@ -39,11 +49,15 @@ class Login extends React.Component {
               onChange={this.handleInput('username')} /></label>
 
           <label className="password-login">Password: 
-          <input type="password"
+          <input 
+              className="signup-password-input"
+              type="password"
               value={this.state.password}
               onChange={this.handleInput('password')} />
           </label>
             <div className="session-submit" onClick={this.handleSubmit}>Enter</div>
+            <div className="session-guest" onClick={this.handleGuest}>Guest</div>
+
         </form>
         <ul className="session-report">
           {
