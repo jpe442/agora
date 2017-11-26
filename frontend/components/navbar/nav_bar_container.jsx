@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import NavBar from './nav_bar';
-import { logout } from '../../actions/session_actions';
+import { logout, clearSessionErrors } from '../../actions/session_actions';
 import { toggleLoginModal, toggleSignUpModal } from '../../actions/ui_actions'
 
 const mapStateToProps = (state) => ({
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  clearSessionErrors: () => dispatch(clearSessionErrors()),
   logout: () => dispatch(logout()),
   toggleLoginModal: () => dispatch(toggleLoginModal()),
   toggleSignUpModal: () => dispatch(toggleSignUpModal())

@@ -5,8 +5,21 @@ import Modal from 'react-modal';
 import SignupContainer from '../session/signup_container';
 import LoginContainer from '../session/login_container'
 
-export default ({ currentUser, logout, toggleLoginModal, toggleSignUpModal, openSignUpModal, openLoginModal }) => {
-  
+
+
+
+export default ({ currentUser, logout, clearSessionErrors, toggleLoginModal, toggleSignUpModal, openSignUpModal, openLoginModal }) => {
+
+  const clearSignUpToggle = () => {
+    toggleSignUpModal();
+    clearSessionErrors();
+  }
+
+  const clearLoginToggle = () => {
+    toggleLoginModal();
+    clearSessionErrors();
+  }
+
   const display = currentUser ? (
     <div className="welcome">
       <div className= "userThumb">{currentUser.username}</div>
@@ -14,7 +27,6 @@ export default ({ currentUser, logout, toggleLoginModal, toggleSignUpModal, open
     </div>
   ) : (
       <div className="authlinks">
-
         <div className="authlink" onClick={toggleSignUpModal}>
           Sign Up
         </div> 
@@ -25,18 +37,17 @@ export default ({ currentUser, logout, toggleLoginModal, toggleSignUpModal, open
         <Modal
           className="authModal"
           isOpen={openSignUpModal}
-          onRequestClose={toggleSignUpModal}
+          onRequestClose={clearSignUpToggle}
           >
-          <div className="cancelbtn" onClick={toggleSignUpModal}>X</div>
+          <div className="cancelbtn" onClick={clearSignUpToggle}>X</div>
           <SignupContainer />
         </Modal>
-
         <Modal
           className="authModal"
           isOpen={openLoginModal}
-          onRequestClose={toggleLoginModal}
+          onRequestClose={clearLoginToggle}
         >
-          <div className="cancelbtn" onClick={toggleLoginModal}>X</div>
+          <div className="cancelbtn" onClick={clearLoginToggle}>X</div>
           <LoginContainer />
         </Modal>
       </div>

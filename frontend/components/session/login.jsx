@@ -21,7 +21,8 @@ class Login extends React.Component {
     console.log(this.props)
     e.preventDefault();
     this.props.login(this.state)
-      .then(() => this.props.toggleLoginModal());
+      .then(() => this.props.toggleLoginModal())
+       .then(() => this.props.clearSessionErrors());
   }
 
   render() {
@@ -42,6 +43,13 @@ class Login extends React.Component {
           </label>
             <button onClick={this.handleSubmit}>Log In</button>
         </form>
+        <ul>Errors:
+          {
+            this.props.autherrors.map((error, idx) => (
+              <li key={idx}>{error}</li>
+            ))
+          }
+        </ul>
       </div>
     )
   }
