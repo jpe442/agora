@@ -1,6 +1,6 @@
 
 .nav-bar {
-  background-color: rgba(245, 240, 235, .5);
+  background-color: rgba(250, 245, 238, .5);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,7 +14,7 @@
   font-size: 26px;
   font-weight: 900;
   letter-spacing: 3px;
-  margin: 1.2% 10% 0% 10%;
+  margin: 1.2% 10% .5% 10%;
   vertical-align: middle;
   line-height: 100%;
 
@@ -36,6 +36,7 @@
 }
 
 .authlink {
+  // display: inline;
   border-left: dotted 1px slategray;
   color: slategray;
   font-family: 'Crimson Text', serif;
@@ -47,7 +48,7 @@
   word-spacing: 1%;
   text-align: center;
   margin: auto;
-  vertical-align: middle;
+  // vertical-align: middle;
 
   &:hover {
     background-color: white;
@@ -55,21 +56,24 @@
   }
 }
 
+
+
 .welcome {
   font-size: 20px;
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   width: 290px;
   line-height: 50px;
   margin: auto;
-  vertical-align: middle;
+  height: 80%;
+  // vertical-align: middle;
   // border-left: dotted 1px darkslateblue;
   // padding: 10px 10px 10px 10px;
 }
 
 .userThumb {
-  border-left: dotted 1px darkslateblue;
+  border-left: dotted 1px slategray;
   font-size: 20px;
   font-family: 'Crimson Text', serif;
   font-size: 16px;
@@ -108,4 +112,66 @@
     cursor: pointer;
     color: darkslateblue;
   }
+}
+
+// .nav-display {
+//   height: 6.5%;
+//   // width: 30%;
+// }
+
+// .nav-bar-login {
+//   display: flex;
+//   flex-direction: row;
+//   height: 80%;
+
+// }
+
+.question-btn {
+  height: 3.8%;
+  border-radius: 3%;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  color: darkslategray;
+  transition: background-color 0.25s ease;
+  background-color: lightgray;
+  position: absolute;
+  width: 12%;
+  right: 25%;
+  top: 1%;
+  border: dotted .5px slategray;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  line-height: 200%;
+  
+  &:hover {
+    background-color: darkslategray;
+    color: lightgray;
+    cursor: pointer;
+  }
+}
+
+.question-btn-ctn {
+  
+}
+
+.question-modal {
+  border-radius: 2%;
+  color: darkslategray;
+  display: flex;
+  position: absolute;
+  background-color: rgba(192, 192, 177, 0.452);
+  top: 15%;
+  left: 25%;
+  // align-items: center;
+  width: 50%;
+  height: 20%;
+  margin: auto;
+}
+
+.question-modal h3{
+  left: 10%;
+  font-size: 150%;
+  position: absolute;
+  top: 10%;
 }

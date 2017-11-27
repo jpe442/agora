@@ -1,1 +1,1 @@
-json.partial! 'api/questions/question', chirp: @chirp
+json.partial! 'api/questions/question', question: @question

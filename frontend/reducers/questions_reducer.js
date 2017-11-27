@@ -1,13 +1,14 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_QUESTIONS } from '../actions/question_actions';
+import { RECEIVE_QUESTIONS, RECEIVE_QUESTION } from '../actions/question_actions';
 
 const questionsReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_QUESTIONS:
-      console.log(action.questions)
       return action.questions;
+    case RECEIVE_QUESTION:
+      return merge({}, state, { [action.question.id]: action.question})
     default:
       console.log("defaultage")
       return state;

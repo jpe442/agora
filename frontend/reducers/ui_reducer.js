@@ -1,10 +1,11 @@
 import merge from 'lodash/merge';
 
-import { TOGGLE_LOADING, TOGGLE_LOGIN_MODAL, TOGGLE_SIGNUP_MODAL } from '../actions/ui_actions';
+import { TOGGLE_LOADING, TOGGLE_LOGIN_MODAL, TOGGLE_SIGNUP_MODAL, TOGGLE_QUESTION_MODAL } from '../actions/ui_actions';
 
 const _clear= Object.freeze({
   openLoginModal: false,
   openSignUpModal: false,
+  openQuestionModal: false,
 });
 
 const uiReducer = (state = _clear, action) => {
@@ -18,6 +19,10 @@ const uiReducer = (state = _clear, action) => {
       let newLState = merge({}, state)
       newLState.openLoginModal = !newLState.openLoginModal;
       return newLState;
+    case TOGGLE_QUESTION_MODAL:
+      let newQState = merge({}, state)
+      newQState.openQuestionModal = !newQState.openQuestionModal;
+      return newQState;
     default:
       return state;
   }

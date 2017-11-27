@@ -1,0 +1,30 @@
+.question-title-field {
+  position: absolute;
+  width: 70%;
+  left: 10%;
+  top: 25%;
+}
+
+.question-title-field input{
+  width: 100%;
+}
+
+.question-body-field {
+  position: absolute;
+  width: 10%;
+  top: 40%;
+  left: 10%;
+}
+
+.question-body-field input{
+  position: absolute;
+  width: 100%;
+}
+
+.question-form-submit-btn {
+  position: absolute;
+  width: 20%;
+  bottom: 10%;
+  right: 10%;
+
+}

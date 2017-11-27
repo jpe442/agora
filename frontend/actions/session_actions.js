@@ -8,14 +8,14 @@ export const CLEAR_ERRORS = 'CLEAR_ERRORS'
 
 export const login = (user) => dispatch => (
   SessionAPIUtil.login(user)
-  .fail(err => (dispatch(receiveErrors(err.responseJSON))))
-  .then(user => (dispatch(receiveCurrentUser(user))))
+    .fail(err => (dispatch(receiveErrors(err.responseJSON))))
+      .then(user => (dispatch(receiveCurrentUser(user))))
 );
 
 export const signup = (user) => dispatch => (
   SessionAPIUtil.signup(user)
    .fail(err => (dispatch(receiveErrors(err.responseJSON))))
-  .then(user => (dispatch(receiveCurrentUser(user))))
+     .then(user => (dispatch(receiveCurrentUser(user))))
 );
 
 export const logout = () => dispatch =>(

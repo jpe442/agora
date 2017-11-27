@@ -3,12 +3,15 @@ import { Link, NavLink } from 'react-router-dom';
 import Modal from 'react-modal';
 // import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 import SignupContainer from '../session/signup_container';
-import LoginContainer from '../session/login_container'
+import LoginContainer from '../session/login_container';
+import NavQuestionBtn from './nav_question_btn';
 
 
 
 
-export default ({ currentUser, logout, clearSessionErrors, toggleLoginModal, toggleSignUpModal, openSignUpModal, openLoginModal }) => {
+export default ({ currentUser, logout, clearSessionErrors, toggleLoginModal, 
+  toggleSignUpModal, toggleQuestionModal,openSignUpModal, openLoginModal, 
+  openQuestionModal, createQuestion, }) => {
 
   const clearSignUpToggle = () => {
     toggleSignUpModal();
@@ -21,9 +24,17 @@ export default ({ currentUser, logout, clearSessionErrors, toggleLoginModal, tog
   }
 
   const display = currentUser ? (
-    <div className="welcome">
-      <div className= "userThumb">{currentUser.username}</div>
-      <div className="authlink" onClick={logout}>Exit Agora</div>
+    <div className="nav-bar-login">
+      <NavQuestionBtn 
+      currentUser={currentUser}
+      createQuestion={createQuestion}
+      openQuestionModal={openQuestionModal}
+      toggleQuestionModal={toggleQuestionModal}
+       />
+      <div className="welcome">
+        <div className= "userThumb">{currentUser.username}</div>
+        <div className="authlink" onClick={logout}>Exit Agora</div>
+      </div>
     </div>
   ) : (
       <div className="authlinks">
@@ -56,7 +67,7 @@ export default ({ currentUser, logout, clearSessionErrors, toggleLoginModal, tog
   return (
     <header className="nav-bar">
       <h2 className="logo">Agora</h2>
-      <div>
+      <div className="nav-display">
         {display}
       </div>
     </header>
