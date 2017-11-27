@@ -1,4 +1,5 @@
 import React from 'react';
+import QuestionIndexItem from './question_index_item'
 
 class QuestionIndex extends React.Component {
   constructor(props) {
@@ -18,13 +19,10 @@ class QuestionIndex extends React.Component {
           <ul className="question-items">
             {
               questions.map(question => (
-              <li
-              className="question-item"
-              key={question.id}
-              >{question.title}
-              <br/>
-              {question.body}
-              </li>
+              <QuestionIndexItem 
+               key = {question.id}
+               question={question}
+              />
               ) 
             )
             }
