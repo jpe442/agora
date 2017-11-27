@@ -1,10 +1,12 @@
 
 .nav-bar {
+  background-color: rgba(245, 240, 235, .5);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: dotted 1px darkslateblue;
-  margin-bottom: 15px;
+  border-bottom: dotted 1px slategray;
+  border-top: solid 2px darkslateblue;
+  margin-bottom: .7%;
 }
 
 .logo {
@@ -12,9 +14,9 @@
   font-size: 26px;
   font-weight: 900;
   letter-spacing: 3px;
-  margin: 10px 20px 10px 100px;
+  margin: 1.2% 10% 0% 10%;
   vertical-align: middle;
-  line-height: 30px;
+  line-height: 100%;
 
 }
 
@@ -34,14 +36,15 @@
 }
 
 .authlink {
-  border-left: dotted 1px darkslateblue;
+  border-left: dotted 1px slategray;
+  color: slategray;
   font-family: 'Crimson Text', serif;
   font-size: 20px;
-  letter-spacing: 2px;
+  letter-spacing: 150%;
   line-height: 50px;
-  height: 100%;
+  height: 80%;
   width: 100%;
-  word-spacing: 2px;
+  word-spacing: 1%;
   text-align: center;
   margin: auto;
   vertical-align: middle;
@@ -58,29 +61,32 @@
   display: flex;
   justify-content: space-between;
   width: 290px;
+  line-height: 50px;
+  margin: auto;
+  vertical-align: middle;
+  // border-left: dotted 1px darkslateblue;
   // padding: 10px 10px 10px 10px;
 }
 
 .userThumb {
   border-left: dotted 1px darkslateblue;
-  font-size: 18px;
+  font-size: 20px;
   font-family: 'Crimson Text', serif;
   font-size: 16px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   line-height: 50px;
-  height: 100%;
+  height: 80%;
   width: 100%;
   text-align: center;
   margin: auto;
   vertical-align: middle;
-
 }
 
 .authModal {
   border-radius: 2%;
   display: flex;
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 248, 0.85);
   top: 20%;
   left: 25%;
   align-items: center;
@@ -96,7 +102,7 @@
   position: absolute;
   top: 2%;
   right: 1%;
-  z-index: 3px;
+  z-index: 3;
 
   &:hover {
     cursor: pointer;
