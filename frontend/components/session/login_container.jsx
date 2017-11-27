@@ -5,7 +5,8 @@ import { toggleLoginModal } from '../../actions/ui_actions'
 import Login from './login';
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state) => ({
+
+const mapStateToProps = (state, ownProps) => ({
   openLoginModal: state.ui.openLoginModal,
   autherrors: state.errors.session
 });
@@ -16,4 +17,4 @@ const mapDispatchToProps = (dispatch) => ({
   clearSessionErrors: () => dispatch(clearSessionErrors()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));

@@ -1,0 +1,20 @@
+.question-items {
+  color: red;
+  display: flex;
+  position: absolute;
+  height: 80%;
+  width: 50%;
+  top: 12%;
+  left: 25%;
+  border-left: dotted 1px darkslateblue;
+  border-right: dotted 1px darkslateblue;
+
+}
+
+.question-item {
+  display: flex;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+
+}

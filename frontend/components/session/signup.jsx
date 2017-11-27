@@ -24,7 +24,8 @@ class Signup extends React.Component {
     e.preventDefault();
     this.props.signup(this.state)
       .then(() => this.props.toggleSignUpModal())
-        .then(() => this.props.clearSessionErrors())
+        .then(() => this.props.history.push('/questions'))
+          .then(() => this.props.clearSessionErrors())
   }
 
   handleGuest(e) {
@@ -35,7 +36,8 @@ class Signup extends React.Component {
     }
     this.props.login(this.state)
       .then(() => this.props.toggleSignUpModal())
-      .then(() => this.props.clearSessionErrors());
+        .then(() => this.props.history.push('/questions'))
+          .then(() => this.props.clearSessionErrors());
   }
 
   render() {

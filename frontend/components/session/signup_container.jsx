@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { signup, login, clearSessionErrors } from '../../actions/session_actions';
 import { toggleSignUpModal } from '../../actions/ui_actions';
 import Signup from './signup';
-
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => ({
   autherrors: state.errors.session
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
   clearSessionErrors: () => dispatch(clearSessionErrors()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Signup));
