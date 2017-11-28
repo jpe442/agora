@@ -1,5 +1,15 @@
+.question-detail-main {
+  position: absolute;
+  border-right: dotted 1px lightgray;
+  border-left: dotted 1px lightgray;
+  width: 60%;
+  height: 80%;
+  left: 10%;
+  top: 13%;
+  color: gray;
+}
 .question-detail-title {
-  color: red;
+  color: darkslategray;
   position: absolute;
   left: 15%;
   top: 15%;
@@ -15,6 +25,6 @@
 
 .detail-to-homepage {
   position: absolute;
-  left: 40%;
-  top: 50%;
+  right: 10%;
+  bottom: 20%;
 }
