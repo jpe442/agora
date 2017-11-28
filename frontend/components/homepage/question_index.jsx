@@ -10,9 +10,14 @@ class QuestionIndex extends React.Component {
     this.props.fetchQuestions();
   }
 
+  componentWillReceiveProps(newProps) {
+    this.setState(newProps.questions)
+  }
+
   render () {
-    const questions = this.props.questions;
+    let questions = this.props.questions;
     console.log(questions)
+    console.log("yes in render")
 
     return (
       <div>

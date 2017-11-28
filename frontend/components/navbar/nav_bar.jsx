@@ -6,9 +6,6 @@ import SignupContainer from '../session/signup_container';
 import LoginContainer from '../session/login_container';
 import NavQuestionBtn from './nav_question_btn';
 
-
-
-
 export default ({ currentUser, logout, clearSessionErrors, toggleLoginModal, 
   toggleSignUpModal, toggleQuestionModal,openSignUpModal, openLoginModal, 
   openQuestionModal, createQuestion, }) => {

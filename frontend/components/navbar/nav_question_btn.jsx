@@ -8,7 +8,8 @@ const NavQuestionBtn = ({ currentUser, createQuestion, toggleQuestionModal, open
     <div 
     className="question-btn"
     onClick={toggleQuestionModal}
-    >Propose Question</div>
+    >Propose Question
+    </div>
 
     <Modal
       className="question-modal"

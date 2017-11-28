@@ -41,7 +41,6 @@ class QuestionForm extends React.Component {
               </label>
             <label className="question-body-field">Context
               <textarea placeholder="Additional context here..."cols="30" rows="4">
-              {body}
               </textarea>
             </label>
           <button 

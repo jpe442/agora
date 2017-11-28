@@ -16,10 +16,10 @@
 .question-item {
   border: dotted 1px rgba(210, 205, 205, 1);
   background-color: rgba(250, 245, 238, .5);
-  display: inline-block;
+  // display: inline-block;
   // position: absolute;
   // vertical-align: middle;
-  max-height: 15%;
+  max-height: 1%;
   overflow: hidden;
   // justify-content: center;
   // align-items: center;  
@@ -37,7 +37,7 @@
   font-weight: 500;
   // position: absolute;
   margin-bottom: 3%;
-  top: 10%;
+  top: 2%;
   left: 0%;
 }
 

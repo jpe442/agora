@@ -8,7 +8,7 @@ const questionsReducer = (state = [], action) => {
     case RECEIVE_QUESTIONS:
       return action.questions;
     case RECEIVE_QUESTION:
-      return merge({}, state, { [action.question.id]: action.question})
+      return state.concat(action.question)
     default:
       console.log("defaultage")
       return state;

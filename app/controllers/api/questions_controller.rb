@@ -4,7 +4,7 @@ class Api::QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      render "api/questions/show"
+      render :show
     else
       render json: @question.errors.full_messages, status: 401
     end
