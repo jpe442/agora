@@ -2,6 +2,7 @@
   color: slategray;
   display: flex;
   flex-direction: column;
+  margin-top: 3%;
   position: absolute;
   height: 83%;
   width: 50%;
@@ -49,4 +50,9 @@
   // position: absolute;
   top: 40%;
   margin-left: 2%;
+}
+
+.question-feed-title {
+  display: flex;
+  justify-content: center;
 }

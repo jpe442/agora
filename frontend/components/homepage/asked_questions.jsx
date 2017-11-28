@@ -13,7 +13,10 @@ class AskedQuestions extends React.Component {
   render() {
     let questions = this.props.questions;
     let currentUser = this.props.currentUser;
-    let asked = questions.filter(question => question.interlocutor_id === currentUser.id)
+    let asked = questions.filter(question => question.interlocutor_id === currentUser.id);
+    if (asked) {
+      asked = asked.reverse();
+    }
     // console.log(questions)
     // console.log("yes in render")
 
