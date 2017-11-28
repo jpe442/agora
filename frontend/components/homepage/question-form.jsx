@@ -45,7 +45,7 @@ class QuestionForm extends React.Component {
             </label>
           <button 
           className="question-form-submit-btn"
-          onClick={this.handleSubmit}>Propose New Query</button>
+          onClick={this.handleSubmit}>Submit</button>
           </form>
 
         </div>
