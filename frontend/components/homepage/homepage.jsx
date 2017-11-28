@@ -4,8 +4,8 @@ import AskedQuestionsContainer from './asked_questions_container'
 export const HomePage = () => {
   return (
     <div>
-      <AskedQuestionsContainer />
       <QuestionIndexContainer/>
+      <AskedQuestionsContainer />
     </div>
   )
 }

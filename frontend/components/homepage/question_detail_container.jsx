@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
   console.log(state.questions)
   return {
   currentUser: state.session.currentUser,
-  question: state.questions[ownProps.match.params.questionId-1],
+  question: state.questions[ownProps.match.params.questionId],
   // questions: state.questions
 }}
 

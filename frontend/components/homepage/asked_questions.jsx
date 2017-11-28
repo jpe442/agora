@@ -24,12 +24,26 @@ class AskedQuestions extends React.Component {
     console.log(this)
     console.log(this.props)
 
-    let questions = this.props.questions;
+    let questions = this.questions;
     let currentUser = this.props.currentUser;
-    let asked = questions.filter(question => question.interlocutor_id === currentUser.id);
-    if (asked) {
-      asked = asked.reverse();
-    }
+    console.log(this.questions)
+
+    let asked = {};
+    let questions_vals = Object.values(questions);
+
+     questions_vals.forEach(question => {
+      if (question.interlocutor_id === currentUser.id) {
+        console.log("assigning")
+        console.log("asked[question.id]")
+        asked[question.id] = question;
+      }
+      console.log(asked)
+    });
+    
+
+    // if (asked) {
+    //   asked = asked.reverse();
+    // }
     console.log(asked)
     console.log("yes in render")
 
@@ -38,7 +52,8 @@ class AskedQuestions extends React.Component {
         <ul className="asked-items">
           <h3 className="asked-questions-title">Questions You've Asked</h3>
           {
-            asked.map(question => (
+            
+            Object.values(asked).reverse().map(question => (
               <QuestionIndexItem
                 key={question.id}
                 question={question}

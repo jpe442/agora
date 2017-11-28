@@ -16,6 +16,7 @@ class QuestionIndex extends React.Component {
 
   render () {
     let questions = this.props.questions;
+
     // if (questions) {
     //   questions = questions.reverse();
     // }
@@ -27,7 +28,7 @@ class QuestionIndex extends React.Component {
           <ul className="question-items">
           < div className="question-feed-title">Question Feed</div> 
             {
-              questions.map(question => (
+              Object.values(questions).reverse().map(question => (
               <QuestionIndexItem 
                key = {question.id}
                question={question}
