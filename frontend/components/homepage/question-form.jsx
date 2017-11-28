@@ -29,7 +29,7 @@ class QuestionForm extends React.Component {
     return (
       <div className="new-form-container">
         <div className="new-form">
-          <h3>Question Here</h3>
+          <h3>New Question</h3>
           <form onSubmit={this.handleSubmit}>
             <label className="question-title-field">
             <input 
@@ -39,13 +39,13 @@ class QuestionForm extends React.Component {
               onChange={this.handleInput('title')}
               />
               </label>
-            <label className="question-body-field">Context
+            <label className="question-body-field">
               <textarea placeholder="Additional context here..."cols="30" rows="4">
               </textarea>
             </label>
           <button 
           className="question-form-submit-btn"
-          onClick={this.handleSubmit}>Propose Query</button>
+          onClick={this.handleSubmit}>Propose New Query</button>
           </form>
 
         </div>

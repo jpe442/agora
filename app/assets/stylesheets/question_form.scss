@@ -18,6 +18,11 @@
 }
 
 .question-body-field input{
+  width: 100%;
+  height: 100%;
+}
+
+.question-body-field input{
   position: absolute;
   width: 100%;
 }
@@ -25,7 +30,7 @@
 .question-form-submit-btn {
   position: absolute;
   width: 20%;
-  bottom: 10%;
+  bottom: 20%;
   right: 10%;
 
 }
