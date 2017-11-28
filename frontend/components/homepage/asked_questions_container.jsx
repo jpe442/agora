@@ -1,6 +1,8 @@
 import react from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 import AskedQuestions from './asked_questions'
+import { fetchQuestions } from '../../actions/question_actions'
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
@@ -8,10 +10,10 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-
+  fetchQuestions: () => dispatch(fetchQuestions())
 })
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
-  undefined
-)(AskedQuestions)
+  mapDispatchToProps
+)(AskedQuestions))

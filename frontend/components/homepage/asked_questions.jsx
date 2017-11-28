@@ -4,21 +4,34 @@ import QuestionIndexItem from './question_index_item'
 class AskedQuestions extends React.Component {
   constructor(props) {
     super(props);
+    this.questions = this.props.questions
   }
+  
+  // componentDidUpdate() {
+  //   console.log("mounting")
+  //   this.props.fetchQuestions();
+  // }
+
+  // componentWillUpdate()
 
   componentWillReceiveProps(newProps) {
-    this.setState(newProps.questions)
+    console.log("receiving props");
+    console.log(newProps.questions)
+    this.setState(newProps.questions);
   }
 
   render() {
+    console.log(this)
+    console.log(this.props)
+
     let questions = this.props.questions;
     let currentUser = this.props.currentUser;
     let asked = questions.filter(question => question.interlocutor_id === currentUser.id);
     if (asked) {
       asked = asked.reverse();
     }
-    // console.log(questions)
-    // console.log("yes in render")
+    console.log(asked)
+    console.log("yes in render")
 
     return (
       <div>

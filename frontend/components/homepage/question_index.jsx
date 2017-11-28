@@ -16,16 +16,16 @@ class QuestionIndex extends React.Component {
 
   render () {
     let questions = this.props.questions;
-    if (questions) {
-      questions = questions.reverse();
-    }
-    console.log(questions)
-    console.log("yes in render")
+    // if (questions) {
+    //   questions = questions.reverse();
+    // }
+    // console.log(questions)
+    // console.log("yes in render")
 
     return (
       <div>
           <ul className="question-items">
-          < div className="question-feed-title">Questions</div> 
+          < div className="question-feed-title">Question Feed</div> 
             {
               questions.map(question => (
               <QuestionIndexItem 

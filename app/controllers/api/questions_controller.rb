@@ -30,6 +30,11 @@ class Api::QuestionsController < ApplicationController
     render json: @questions
   end
 
+  def show
+    @question = Question.find(params[:id])
+    render :show
+  end
+
   private
 
   def question_params

@@ -133,24 +133,24 @@
 .question-btn {
   align-content: center;
   vertical-align: middle;
-  height: 4.2%;
+  height: 4.3%;
   border-radius: 3%;
   letter-spacing: 1px;
   font-family: sans-serif;
-  font-size: 100%;
+  font-size: 90%;
   color: darkslategray;
   transition: background-color 0.25s ease;
   background-color: lightgray;
   position: absolute;
-  width: 20%;
+  width: 12%;
   overflow: hidden;
   right: 28%;
-  top: 2%;
+  top: 1%;
   border: dotted .5px slategray;
   margin: auto;
   display: flex;
   justify-content: center;
-  line-height: 180%;
+  line-height: 200%;
   
   &:hover {
     background-color: darkslategray;
