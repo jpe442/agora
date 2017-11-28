@@ -24,7 +24,7 @@ class Signup extends React.Component {
     e.preventDefault();
     this.props.signup(this.state)
       .then(() => this.props.toggleSignUpModal())
-        .then(() => this.props.history.push('/questions'))
+        .then(() => this.props.history.push('/homepage'))
           .then(() => this.props.clearSessionErrors())
   }
 
@@ -36,7 +36,7 @@ class Signup extends React.Component {
     }
     this.props.login(this.state)
       .then(() => this.props.toggleSignUpModal())
-        .then(() => this.props.history.push('/questions'))
+        .then(() => this.props.history.push('/homepage'))
           .then(() => this.props.clearSessionErrors());
   }
 
