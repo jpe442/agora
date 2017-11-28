@@ -8,8 +8,6 @@
   border-top: solid 2px darkslateblue;
   margin-bottom: .7%;
   width: 100%;
-  max-height: 1%;
-
 }
 
 .nav-display {
@@ -21,7 +19,7 @@
   font-size: 26px;
   font-weight: 900;
   letter-spacing: 3px;
-  margin: 1.2% 10% .5% 10%;
+  margin: 1.3% 10% .5% 8%;
   vertical-align: middle;
   line-height: 100%;
 
@@ -29,7 +27,7 @@
 
 .authlinks {
   // border-left: solid 1px rgb(57, 38, 179);
-  font-size: 20px;
+  font-size: 100%;
   font-weight: 500;
   height: 100%;
   display: flex;
@@ -80,7 +78,7 @@
 
 .userThumb {
   border-left: dotted 1px slategray;
-  font-size: 20px;
+  font-size: 120%;
   font-family: 'Crimson Text', serif;
   font-size: 16px;
   letter-spacing: 2px;
@@ -139,6 +137,7 @@
   border-radius: 3%;
   letter-spacing: 1px;
   font-family: sans-serif;
+  font-size: 100%;
   color: darkslategray;
   transition: background-color 0.25s ease;
   background-color: lightgray;
@@ -151,7 +150,7 @@
   margin: auto;
   display: flex;
   justify-content: center;
-  line-height: 200%;
+  line-height: 180%;
   
   &:hover {
     background-color: darkslategray;
