@@ -26,7 +26,7 @@ class QuestionDetail extends React.Component {
   componentWillReceiveProps(newProps) {
     console.log("about to receive props from reup")
     this.openQEditModal = newProps.openQEditModal;
-    this.state = newProps.question;
+    this.setState(newProps.question);
 
   }
   

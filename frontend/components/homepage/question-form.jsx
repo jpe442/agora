@@ -18,7 +18,7 @@ class QuestionForm extends React.Component {
     const question = Object.assign({}, this.state);
       this.props.createQuestion(question);
       this.props.toggleQuestionModal()
-        .then(this.props.ownProps.history.push('/homepage'))
+      this.props.ownProps.history.push('/homepage')
   }
 
   handleInput(type) {
