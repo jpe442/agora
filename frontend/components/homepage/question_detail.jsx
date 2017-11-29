@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import EditQuestionFormContainer from './edit_question_container'
 import Modal from 'react-modal';
-import { toggleQEditModal } from '../../actions/ui_actions';
+// import { toggleQEditModal } from '../../actions/ui_actions';
 
 
 class QuestionDetail extends React.Component {
@@ -20,9 +20,15 @@ class QuestionDetail extends React.Component {
     this.handleEdit = this.handleEdit.bind(this)
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   this.props.openQEditModal = newProps.openQEditModal;
+  // componentDidMount() {
+  //   this.props.fetchQuestion(this.props.question.id);
   // }
+  componentWillReceiveProps(newProps) {
+    console.log("about to receive props from reup")
+    this.openQEditModal = newProps.openQEditModal;
+    this.state = newProps.question;
+
+  }
   
   handleDelete(e) {
     e.preventDefault(e);
@@ -32,8 +38,8 @@ class QuestionDetail extends React.Component {
   };
 
   handleEdit(e) {
-    console.log("in handleEdit")
-    console.log(this)
+    // console.log("in handleEdit")
+    // console.log(this)
     e.preventDefault(e);
     this.toggleQEditModal()
   };
@@ -66,7 +72,7 @@ class QuestionDetail extends React.Component {
         <div className="answers-detail-main">Answers will be here listed here...</div>
         
         <Modal
-          className="question-edit-modal"
+          className="question-modal"
           isOpen={this.openQEditModal}
           onRequestClose={this.toggleQEditModal}>
           <div className="cancelbtn" onClick={this.toggleQEditModal}>X</div>
@@ -75,7 +81,7 @@ class QuestionDetail extends React.Component {
             // currentUser={currentUser}
             // createQuestion={createQuestion}
             // toggleQEditModal={toggleQuestionModal}
-          />From Inside QEdit Modal
+          />
         </Modal>
       </div>
 

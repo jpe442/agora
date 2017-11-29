@@ -2,20 +2,24 @@ import React from 'react';
 
 class QuestionEditForm extends React.Component {
   constructor(props) {
+ 
     super(props);
+    console.log("below is props in edit form")
+    console.log(this.props)
     this.state = {
       title: this.props.question.title,
       body: this.props.question.body,
       interlocutor_id: this.props.currentUser.id,
-      id: question.id
+      id: this.props.question.id
     };
+   
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   //  componentWillReceiveProps(newProps) {
   //   console.log("receiving props");
   //   console.log(newProps.openQEditModal)
-  //   this.setState(newProps.openQEditModal);
+  //   this.setState(newProps.question);
   // }
 
   handleSubmit(e) {
@@ -60,7 +64,7 @@ class QuestionEditForm extends React.Component {
             </label>
             <button
               className="question-form-submit-btn"
-              onClick={this.handleSubmit}>Submit</button>
+              onClick={this.handleSubmit}>Update</button>
           </form>
 
         </div>
