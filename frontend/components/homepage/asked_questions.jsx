@@ -14,38 +14,42 @@ class AskedQuestions extends React.Component {
 
   // componentWillUpdate()
 
-  componentWillReceiveProps(newProps) {
-    console.log("receiving props");
-    console.log(newProps.questions)
-    this.setState(newProps.questions);
+  // componentWillReceiveProps(newProps) {
+  //   console.log("receiving props");
+  //   console.log(newProps.questions)
+  //   this.setState(newProps.questions);
+  // }
+
+  componentDidMount() {
+    this.props.fetchQuestions();
   }
 
   render() {
-    console.log(this)
-    console.log(this.props)
+    // console.log(this)
+    // console.log(this.props)
 
     let questions = this.questions;
     let currentUser = this.props.currentUser;
-    console.log(this.questions)
+    // console.log(this.questions)
 
     let asked = {};
     let questions_vals = Object.values(questions);
 
      questions_vals.forEach(question => {
       if (question.interlocutor_id === currentUser.id) {
-        console.log("assigning")
-        console.log("asked[question.id]")
+        // console.log("assigning")
+        // console.log("asked[question.id]")
         asked[question.id] = question;
       }
-      console.log(asked)
+      // console.log(asked)
     });
     
 
     // if (asked) {
     //   asked = asked.reverse();
     // }
-    console.log(asked)
-    console.log("yes in render")
+    // console.log(asked)
+    // console.log("yes in render")
 
     return (
       <div>

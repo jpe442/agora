@@ -20,17 +20,19 @@
   // display: inline-block;
   // position: absolute;
   // vertical-align: middle;
+  left: 80%;
+  height: 180%;
   max-height: 50%;
-  overflow: hidden;
+  overflow: auto;
   // justify-content: center;
   // align-items: center;  
-  margin: 5%;
+  margin: 3%;
   width: 78%;
   padding-left: 6%;
   padding-right: 6%;
   padding-top: 6%;
   padding-bottom: 6%;
-  line-height: 70%;
+  // line-height: 80%;
 }
 
 .question-title {
@@ -41,7 +43,7 @@
   // position: absolute;
   margin-bottom: 3%;
   top: 0%;
-  left: 0%;
+  left: 20%;
 }
 
 .question-body {

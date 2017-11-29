@@ -1,7 +1,7 @@
 import react from 'react';
 import { connect } from 'react-redux';
 import QuestionDetail from './question_detail';
-import { fetchQuestion } from '../../actions/question_actions';
+import { fetchQuestion, deleteQuestion } from '../../actions/question_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
@@ -15,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
 }}
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchQuestion: id => dispatch(fetchQuestion(id))
+  fetchQuestion: id => dispatch(fetchQuestion(id)),
+  deleteQuestion: id => dispatch(deleteQuestion(id))
 })
 
 export default withRouter(connect(

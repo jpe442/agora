@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import QuestionForm from '../homepage/question-form'
 
-const NavQuestionBtn = ({ currentUser, createQuestion, toggleQuestionModal, openQuestionModal }) => {
+const NavQuestionBtn = ({ currentUser, ownProps, createQuestion, toggleQuestionModal, openQuestionModal }) => {
   return (
     <div>
     <div 
@@ -17,6 +17,7 @@ const NavQuestionBtn = ({ currentUser, createQuestion, toggleQuestionModal, open
       onRequestClose={toggleQuestionModal}> 
       <div className="cancelbtn" onClick={toggleQuestionModal}>X</div>
       <QuestionForm
+      ownProps={ownProps}
       currentUser={currentUser}
       createQuestion={createQuestion}
       toggleQuestionModal={toggleQuestionModal}

@@ -8,8 +8,11 @@ import NavQuestionBtn from './nav_question_btn';
 
 export default ({ currentUser, logout, clearSessionErrors, toggleLoginModal, 
   toggleSignUpModal, toggleQuestionModal,openSignUpModal, openLoginModal, 
-  openQuestionModal, createQuestion, }) => {
+  openQuestionModal, createQuestion, ownProps }) => {
 
+
+  console.log("this is what ownProps is pointing at in navbar")
+  console.log(ownProps)
   const clearSignUpToggle = () => {
     toggleSignUpModal();
     clearSessionErrors();
@@ -23,6 +26,7 @@ export default ({ currentUser, logout, clearSessionErrors, toggleLoginModal,
   const display = currentUser ? (
     <div className="nav-bar-login">
       <NavQuestionBtn 
+      ownProps={ownProps}
       currentUser={currentUser}
       createQuestion={createQuestion}
       openQuestionModal={openQuestionModal}
