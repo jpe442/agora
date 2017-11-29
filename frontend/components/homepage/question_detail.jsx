@@ -8,9 +8,11 @@ class QuestionDetail extends React.Component {
     super(props);
     this.currentUser = this.props.currentUser;
     this.state = this.props.question;
+    this.toggleQuestionModal = this.props.toggleQuestionModal.bind(this);
     this.deleteQuestion = this.props.deleteQuestion.bind(this);
     console.log(this.props.question)
     this.handleDelete = this.handleDelete.bind(this)
+    this.handleEdit = this.handleEdit.bind(this)
   }
   
   handleDelete(e) {
@@ -19,6 +21,11 @@ class QuestionDetail extends React.Component {
       .then(console.log("testing thunk middlemarks"))
       .then(() => this.props.history.push('/homepage'));
   };
+
+  handleEdit(e) {
+    e.preventDefault(e);
+    this.toggleQuestionModal()
+  };
   render() {
    
     console.log("here in question detail")
@@ -26,11 +33,13 @@ class QuestionDetail extends React.Component {
     console.log(this)
     console.log("above is this")
     const buttons = this.currentUser.id === this.state.interlocutor_id ? (
-      <div onClick={this.handleDelete} className="interlocutor-view">This is what I see as interlocutor
+      <div className="interlocutor-view">
+        <div onClick={this.handleEdit} className="question-detail-edit-btn">Edit Question</div>
+        <div onClick={this.handleDelete} className="question-detail-delete">Rescind Question</div>
       </div>
 
     ) : (
-      <div>this is what I see when not interlocutor</div>
+      <div></div>
     )
        
     return (
@@ -42,7 +51,6 @@ class QuestionDetail extends React.Component {
           <h3 className="interlocutor-name">Interlocutor: {this.state.interlocutor.username}</h3>
           <p className="question-detail-body">{this.state.body}</p>
           <Link className="detail-to-homepage" to={"/homepage/"}>go back</Link>
-          <h4>give me a way to edit this question if I am the interlocutor</h4>
         </div>
         <div className="answers-detail-main">Answers will be here listed here...</div>
       </div>

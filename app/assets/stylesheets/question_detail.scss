@@ -37,8 +37,17 @@
 
 .detail-to-homepage {
   position: absolute;
-  right: 10%;
+  left: 15%;
   bottom: 20%;
+  color: gray;
+  border: dotted 1px lightgray;
+
+
+  &:hover {
+    cursor: pointer;
+    color: #FFFAF0;
+    background-color: gray;
+  }
 }
 
 .interlocutor-name {
@@ -46,4 +55,48 @@
   left: 5%;
   top: 10%;
   font-size-adjust: 120%;
+}
+
+.interlocutor-view {
+  color: red;
+  
+}
+
+.question-detail-delete {
+  border: dotted 1px lightgray;
+  font-family: helvetica;
+  position: absolute;
+  right: 10%;
+  transition: background-color 0.4s ease;
+  width: 25%;
+  top: 10%;
+  font-size: 80%;
+  display: flex;
+  justify-content: center;
+  padding: .5%;
+  
+  &:hover {
+    cursor: pointer;
+    color: #FFFAF0;
+    background-color: red;
+  }
+}
+
+.question-detail-edit-btn {
+  position: absolute;
+  color: slategray;
+  border: dotted 1px lightgray;
+  font-family: helvetica;
+  left: 5%;
+  font-size: 80%;
+  display: flex;
+  justify-content: center;
+  padding: .5%;
+  width: 25%;
+    &:hover {
+    cursor: pointer;
+    color: #FFFAF0;
+    background-color: slategray;
+  }
+
 }

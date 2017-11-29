@@ -26,7 +26,12 @@ export const createQuestion = (question) => dispatch => (
 export const deleteQuestion = (id) => dispatch => (
   QuestionAPIUtil.deleteQuestion(id)
     .then(question => (dispatch(removeQuestion(id))))
-)
+);
+
+export const updateQuestion = (question) => dispatch => (
+  QuestionAPIUtil.updateQuestion(question)
+    .then(question => (dispatch(receiveQuestion(question))))
+);
 
 // internal action creators
 

@@ -1,7 +1,8 @@
 import react from 'react';
 import { connect } from 'react-redux';
 import QuestionDetail from './question_detail';
-import { fetchQuestion, deleteQuestion } from '../../actions/question_actions';
+import { fetchQuestion, deleteQuestion, updateQuestion } from '../../actions/question_actions';
+import { toggleQuestionModal } from '../../actions/ui_actions'
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
@@ -16,7 +17,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchQuestion: id => dispatch(fetchQuestion(id)),
-  deleteQuestion: id => dispatch(deleteQuestion(id))
+  deleteQuestion: id => dispatch(deleteQuestion(id)),
+  updateQuestion: question => dispatch(updateQuestion(question)),
+  toggleQuestionModal: () => dispatch(toggleQuestionModal()),
 })
 
 export default withRouter(connect(
