@@ -19,7 +19,7 @@ class Api::QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
 
-    if @question && @question.update_attributes
+    if @question && @question.update_attributes(question_params)
       render "api/questions/show"
     elsif
       render json: ['Could not locate question'], status: 400

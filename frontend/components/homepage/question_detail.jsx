@@ -1,19 +1,28 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import EditQuestionFormContainer from './edit_question_container'
+import Modal from 'react-modal';
+import { toggleQEditModal } from '../../actions/ui_actions';
 
 
 class QuestionDetail extends React.Component {
   constructor(props) {
     super(props);
     this.currentUser = this.props.currentUser;
+    this.openQEditModal = this.props.openQEditModal;
     this.state = this.props.question;
-    this.toggleQuestionModal = this.props.toggleQuestionModal.bind(this);
+    this.toggleQEditModal = this.props.toggleQEditModal;
+    console.log("here in constructor checking openQEditModal")
     this.deleteQuestion = this.props.deleteQuestion.bind(this);
     console.log(this.props.question)
     this.handleDelete = this.handleDelete.bind(this)
     this.handleEdit = this.handleEdit.bind(this)
   }
+
+  // componentWillReceiveProps(newProps) {
+  //   this.props.openQEditModal = newProps.openQEditModal;
+  // }
   
   handleDelete(e) {
     e.preventDefault(e);
@@ -23,15 +32,17 @@ class QuestionDetail extends React.Component {
   };
 
   handleEdit(e) {
+    console.log("in handleEdit")
+    console.log(this)
     e.preventDefault(e);
-    this.toggleQuestionModal()
+    this.toggleQEditModal()
   };
   render() {
    
     console.log("here in question detail")
     // console.log(this.props.question.id)
-    console.log(this)
-    console.log("above is this")
+    console.log(this.openQEditModal)
+    console.log("above is status of openQEditModal 2")
     const buttons = this.currentUser.id === this.state.interlocutor_id ? (
       <div className="interlocutor-view">
         <div onClick={this.handleEdit} className="question-detail-edit-btn">Edit Question</div>
@@ -53,7 +64,22 @@ class QuestionDetail extends React.Component {
           <Link className="detail-to-homepage" to={"/homepage/"}>go back</Link>
         </div>
         <div className="answers-detail-main">Answers will be here listed here...</div>
+        
+        <Modal
+          className="question-edit-modal"
+          isOpen={this.openQEditModal}
+          onRequestClose={this.toggleQEditModal}>
+          <div className="cancelbtn" onClick={this.toggleQEditModal}>X</div>
+          <EditQuestionFormContainer
+            // ownProps={ownProps}
+            // currentUser={currentUser}
+            // createQuestion={createQuestion}
+            // toggleQEditModal={toggleQuestionModal}
+          />From Inside QEdit Modal
+        </Modal>
       </div>
+
+
     )
   }
 }
