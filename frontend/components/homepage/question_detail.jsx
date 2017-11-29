@@ -23,7 +23,7 @@ class QuestionDetail extends React.Component {
           <Link className="detail-to-homepage" to={"/homepage/"}>go back</Link>
           <h4>give me a way to edit this question if I am the interlocutor</h4>
         </div>
-    
+        <div className="answers-detail-main">Answers will be here...</div>
       </div>
     )
   }
