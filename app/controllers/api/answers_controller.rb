@@ -1,8 +1,7 @@
 class Api::AnswersController < ApplicationController
-  class AnswersController < ApplicationController
 
   def create
-    @question = Question.new(answer_params)
+    @answer = Answer.new(answer_params)
     if @answer.save
       render :show
     else
@@ -11,7 +10,7 @@ class Api::AnswersController < ApplicationController
   end
 
   def destroy
-    @answer = Question.find(params[:id])
+    @answer = Answer.find(params[:id])
     @answer.destroy!
     render json: @answer
   end

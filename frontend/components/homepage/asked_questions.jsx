@@ -56,7 +56,6 @@ class AskedQuestions extends React.Component {
         <ul className="asked-items">
           <h3 className="asked-questions-title">Questions You've Asked</h3>
           {
-            
             Object.values(asked).reverse().map(question => (
               <QuestionIndexItem
                 key={question.id}

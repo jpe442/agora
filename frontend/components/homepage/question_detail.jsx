@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import EditQuestionFormContainer from './edit_question_container'
 import Modal from 'react-modal';
+import AnswerItem from './answers_list_item'
 // import { toggleQEditModal } from '../../actions/ui_actions';
 
 
@@ -60,7 +61,7 @@ class QuestionDetail extends React.Component {
     )
        
     return (
-      <div>
+      <div className="question-detail">
         <div className="question-detail-main">
           <div>{buttons}</div>
           {console.log("kk")}
@@ -69,12 +70,17 @@ class QuestionDetail extends React.Component {
           <p className="question-detail-body">{this.state.body}</p>
           <Link className="detail-to-homepage" to={"/homepage/"}>go back</Link>
         </div>
-        <div className="answers-detail-main">Answers to This Question
-          {
-           this.state.answers.map(answer => 
-          <li key="answer.id">{answer.body}</li>
-          ) 
-          }
+
+        
+        <div className="answers-detail-main">
+          <h3>Answers to This Question</h3>
+          <ul className="answers-list">
+              {
+              this.state.answers.map(answer => 
+              <AnswerItem key={answer.id} answer={answer}/>
+              ) 
+            }
+          </ul>
         </div>
         
         <Modal
@@ -83,10 +89,6 @@ class QuestionDetail extends React.Component {
           onRequestClose={this.toggleQEditModal}>
           <div className="cancelbtn" onClick={this.toggleQEditModal}>X</div>
           <EditQuestionFormContainer
-            // ownProps={ownProps}
-            // currentUser={currentUser}
-            // createQuestion={createQuestion}
-            // toggleQEditModal={toggleQuestionModal}
           />
         </Modal>
       </div>

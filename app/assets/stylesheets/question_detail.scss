@@ -1,22 +1,67 @@
+.question-detail {
+  // width: 100%;
+  // height: 100%;
+  // display: flex;
+  // flex-direction: column;
+}
 .question-detail-main {
+  display: flex;
+  justify-content: center;
   position: absolute;
   border-right: dotted 1px lightgray;
   border-left: dotted 1px lightgray;
-  width: 60%;
+  width: 35%;
   height: 80%;
-  left: 10%;
+  left: 5%;
   top: 13%;
   color: gray;
 }
 
 .answers-detail-main {
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  left: 15%;
-  top: 50%;
-  width: 60%;
-  color: lightblue;
+  right: 5%;
+  top: 15%;
+  width: 50%;
+  height: 80%;
+  border-right: dotted 1px lightgray;
+  color: slategray;
   font-size: 120%;
 
+}
+
+.answers-list {
+  color: red;
+  position: absolute;
+  left: 5%;
+  bottom: 15%;
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.answers-list li{
+  color: darkslateblue;
+  // position: absolute;
+  // left: 10%;
+  // top: 10%;
+  width: 90%;
+  margin-top: 10%;
+  border: dotted 1px lightgray;
+  border-radius: 3%;
+  height: 30%;
+  padding: 4%;
+
+}
+
+.answers-detail-main h3{
+  font-size: 130%;
+}
+
+.answer-item {
 }
 
 .question-detail-title {
@@ -24,8 +69,10 @@
   color: darkslategray;
   position: absolute;
   left: 5%;
-  top: 20%;
+  top: 17%;
   font-size: 180%;
+  width: 90%;
+  padding-bottom: 5%;
 }
 
 .question-detail-body {
@@ -33,9 +80,11 @@
   display: flex;
   color: slategray;
   left: 10%;
-  top: 30%;
+  top: 33%;
   overflow: hidden;
   width: 80%;
+  word-spacing: 1%;
+  line-height: 160%;
   // text-align: justify;
   // text-justify: inter-word;
 
@@ -64,7 +113,7 @@
 .interlocutor-name {
   position: absolute;
   left: 5%;
-  top: 12%;
+  top: 8%;
   font-size-adjust: 120%;
 }
 

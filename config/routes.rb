@@ -10,9 +10,6 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create, :index]
     resources :questions
     resources :answers
-    resources :question_searches, only: [:index] do
-     get "question", on: :collection
-  end
   end
 
   root "static_pages#root"
