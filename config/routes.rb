@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
 
+  namespace :api, defaults: {format: :json} do 
+    get 'questions/search'
+  end
 
+  
   namespace :api, defaults: {format: :json} do
     resource :session, only: [:new, :create, :destroy]
     resources :users, only: [:new, :create, :index]
     resources :questions
+    resources :answers
+    resources :question_searches, only: [:index] do
+     get "question", on: :collection
+  end
   end
 
   root "static_pages#root"

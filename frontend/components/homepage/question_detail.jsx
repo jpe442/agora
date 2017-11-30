@@ -69,7 +69,13 @@ class QuestionDetail extends React.Component {
           <p className="question-detail-body">{this.state.body}</p>
           <Link className="detail-to-homepage" to={"/homepage/"}>go back</Link>
         </div>
-        <div className="answers-detail-main">Answers will be here listed here...</div>
+        <div className="answers-detail-main">Answers to This Question
+          {
+           this.state.answers.map(answer => 
+          <li key="answer.id">{answer.body}</li>
+          ) 
+          }
+        </div>
         
         <Modal
           className="question-modal"

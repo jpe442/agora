@@ -38,7 +38,12 @@ class Api::QuestionsController < ApplicationController
     render :show
   end
 
-  private
+  def search
+     @questions = Question.top_10_results(params[:query])
+     render :index
+  end
+
+private
 
   def question_params
     params.require(:question).permit(:interlocutor_id, :title, :body)

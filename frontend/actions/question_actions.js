@@ -5,6 +5,7 @@ import * as QuestionAPIUtil from '../util/question_api_util'
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
+export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS';
 
 // thunks 
 
@@ -33,6 +34,10 @@ export const updateQuestion = (question) => dispatch => (
     .then(question => (dispatch(receiveQuestion(question))))
 );
 
+export const searchQuestions = (query) => dispatch => (
+  QuestionAPIUtil.searchQuestions(query)
+    .then(questions => (dispatch(receiveSearchResults(questions))))
+);
 // internal action creators
 
 const receiveQuestions = (questions) => ({
@@ -48,5 +53,10 @@ const receiveQuestion = (question) => ({
 const removeQuestion = (questionId) => ({
   type: REMOVE_QUESTION,
   questionId
+})
+
+const receiveSearchResults = (query) => ({
+  type: RECEIVE_SEARCH_RESULTS,
+  query
 })
 

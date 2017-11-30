@@ -8,10 +8,7 @@ export default ({ question }) => {
       <li
         className="question-item"
       >    
-    
-        <h3 className="question-title">{question.title}{question.id}</h3>
-      
-    
+        <h3 className="question-title">{question.title}</h3>
       </li>
     </Link>
   );
