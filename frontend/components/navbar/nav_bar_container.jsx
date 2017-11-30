@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import NavBar from './nav_bar';
 import { logout, clearSessionErrors } from '../../actions/session_actions';
 import { toggleLoginModal, toggleSignUpModal, toggleQuestionModal } from '../../actions/ui_actions'
-import { createQuestion } from '../../actions/question_actions';
+import { createQuestion, clearSearchResults, searchQuestions } from '../../actions/question_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,11 +19,13 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
   clearSessionErrors: () => dispatch(clearSessionErrors()),
+  clearSearchResults: () => dispatch(clearSearchResults()),
   logout: () => dispatch(logout()),
   toggleLoginModal: () => dispatch(toggleLoginModal()),
   toggleSignUpModal: () => dispatch(toggleSignUpModal()),
   toggleQuestionModal: () => dispatch(toggleQuestionModal()),
   createQuestion: (question) => dispatch(createQuestion(question)),
+  searchQuestions: (query) => dispatch(searchQuestions(query)),
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));

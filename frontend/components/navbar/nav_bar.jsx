@@ -5,10 +5,11 @@ import Modal from 'react-modal';
 import SignupContainer from '../session/signup_container';
 import LoginContainer from '../session/login_container';
 import NavQuestionBtn from './nav_question_btn';
+import SearchBar from './search_bar';
 
-export default ({ currentUser, logout, clearSessionErrors, toggleLoginModal, 
+export default ({ currentUser, logout, clearSessionErrors, clearSearchResults, toggleLoginModal, 
   toggleSignUpModal, toggleQuestionModal,openSignUpModal, openLoginModal, 
-  openQuestionModal, createQuestion, ownProps }) => {
+  openQuestionModal, createQuestion, ownProps, searchQuestions}) => {
 
 
   console.log("this is what ownProps is pointing at in navbar")
@@ -23,18 +24,31 @@ export default ({ currentUser, logout, clearSessionErrors, toggleLoginModal,
     clearSessionErrors();
   }
 
+  const handleLogout = () => {
+    logout();
+    clearSearchResults();
+  }
+
   const display = currentUser ? (
     <div className="nav-bar-login">
       <NavQuestionBtn 
-      ownProps={ownProps}
-      currentUser={currentUser}
-      createQuestion={createQuestion}
-      openQuestionModal={openQuestionModal}
-      toggleQuestionModal={toggleQuestionModal}
+        ownProps={ownProps}
+        currentUser={currentUser}
+        createQuestion={createQuestion}
+        openQuestionModal={openQuestionModal}
+        toggleQuestionModal={toggleQuestionModal}
        />
+
+
+      <SearchBar 
+        searchQuestions={searchQuestions}
+      />
+    
+
+
       <div className="welcome">
         <div className= "userThumb">{currentUser.username}</div>
-        <div className="authlink" onClick={logout}>Exit Agora</div>
+        <div className="authlink" onClick={handleLogout}>Exit Agora</div>
       </div>
     </div>
   ) : (

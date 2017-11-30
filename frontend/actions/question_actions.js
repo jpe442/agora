@@ -6,6 +6,7 @@ export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
 export const RECEIVE_QUESTION = 'RECEIVE_QUESTION';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
 export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS';
+export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
 
 // thunks 
 
@@ -38,6 +39,7 @@ export const searchQuestions = (query) => dispatch => (
   QuestionAPIUtil.searchQuestions(query)
     .then(questions => (dispatch(receiveSearchResults(questions))))
 );
+
 // internal action creators
 
 const receiveQuestions = (questions) => ({
@@ -58,5 +60,9 @@ const removeQuestion = (questionId) => ({
 const receiveSearchResults = (query) => ({
   type: RECEIVE_SEARCH_RESULTS,
   query
+})
+
+export const clearSearchResults = () => ({
+  type: CLEAR_SEARCH_RESULTS
 })
 
