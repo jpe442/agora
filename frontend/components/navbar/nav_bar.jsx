@@ -42,6 +42,7 @@ export default ({ currentUser, logout, clearSessionErrors, clearSearchResults, t
 
       <SearchBar 
         searchQuestions={searchQuestions}
+        ownProps={ownProps}
       />
     
 

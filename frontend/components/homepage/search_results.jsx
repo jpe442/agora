@@ -4,21 +4,21 @@ import QuestionIndexItem from './question_index_item'
 class SearchResults extends React.Component {
   constructor(props) {
     super(props);
-    this.search = this.props.search
   }
 
   // componentDidUpdate() {
   //   console.log("mounting")
-  //   this.props.fetchQuestions();
+  //   this.setState(newProps.search)
   // }
 
   // componentWillUpdate()
 
-  // componentWillReceiveProps(newProps) {
-  //   console.log("receiving props");
-  //   console.log(newProps.questions)
-  //   this.setState(newProps.questions);
-  // }
+  componentWillReceiveProps(newProps) {
+    console.log("receiving props Josh");
+    console.log(newProps.search);
+    this.setState(newProps.search);
+    this.render();
+  }
 
   // componentDidMount() {
   //   this.props.fetchQuestions();
@@ -32,7 +32,7 @@ class SearchResults extends React.Component {
           <h3 className="search-question-items-title">Latest Search Results</h3>
           {
 
-            Object.values(this.search).map(question => (
+            Object.values(this.props.search).map(question => (
               <QuestionIndexItem
                 key={question.id}
                 question={question}

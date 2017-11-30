@@ -4,7 +4,6 @@ import QuestionIndexItem from './question_index_item'
 class AskedQuestions extends React.Component {
   constructor(props) {
     super(props);
-    this.questions = this.props.questions
   }
   
   // componentDidUpdate() {
@@ -14,13 +13,14 @@ class AskedQuestions extends React.Component {
 
   // componentWillUpdate()
 
-  // componentWillReceiveProps(newProps) {
-  //   console.log("receiving props");
-  //   console.log(newProps.questions)
-  //   this.setState(newProps.questions);
-  // }
+  componentWillReceiveProps(newProps) {
+    console.log("receiving props in asked questions");
+    console.log(newProps.questions)
+    this.setState(newProps.questions);
+    this.render();
+  }
 
-  componentDidMount() {
+  componentDidMount() { 
     this.props.fetchQuestions();
   }
 
@@ -28,7 +28,7 @@ class AskedQuestions extends React.Component {
     // console.log(this)
     // console.log(this.props)
 
-    let questions = this.questions;
+    let questions = this.props.questions;
     let currentUser = this.props.currentUser;
     // console.log(this.questions)
 
