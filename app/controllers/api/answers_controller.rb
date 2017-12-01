@@ -16,6 +16,15 @@ class Api::AnswersController < ApplicationController
   end
 
   def update
+    @answer = Answer.find(params[:id])
+
+    if @answer && @answer.update_attributes(answer_params)
+      render "api/answers/show"
+    elsif
+      render json: ['Could not locate answer'], status: 400
+    else
+      render json: @question.errors.full_messages, status: 401
+    end
   end
 
   private

@@ -2,7 +2,7 @@ import react from 'react';
 import { connect } from 'react-redux';
 import QuestionDetail from './question_detail';
 import { fetchQuestion, deleteQuestion, updateQuestion } from '../../actions/question_actions';
-import { createAnswer, deleteAnswer } from '../../actions/answer_actions';
+import { createAnswer, deleteAnswer, updateAnswer } from '../../actions/answer_actions';
 import { toggleQEditModal } from '../../actions/ui_actions';
 import { withRouter } from 'react-router-dom';
 
@@ -32,6 +32,7 @@ const mapDispatchToProps = (dispatch) => ({
   toggleQEditModal: () => dispatch(toggleQEditModal()),
   createAnswer: answer => dispatch(createAnswer(answer)),
   deleteAnswer: id => dispatch(deleteAnswer(id)),
+  updateAnswer: answer => dispatch(updateAnswer(answer))
 })
 
 export default withRouter(connect(

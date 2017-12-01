@@ -28,9 +28,9 @@ export const deleteAnswer = (id) => dispatch => (
     .then(answer => (dispatch(removeAnswer(id))))
 );
 
-export const updateQuestion = (answer) => dispatch => (
+export const updateAnswer = (answer) => dispatch => (
   AnswerAPIUtil.updateAnswer(answer)
-    .then(answer => (dispatch(receiveQuestion(answer))))
+    .then(answer => (dispatch(receiveAnswer(answer))))
 ); 
 
 // internal action creators

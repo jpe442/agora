@@ -78,6 +78,7 @@ class QuestionDetail extends React.Component {
           <h3>Answers to This Question</h3>
           <CreateAnswerForm 
           createAnswer={this.props.createAnswer}
+          updateAnswer={this.props.updateAnswer}
           currentUser={this.props.currentUser}
           question={this.props.question}
           
