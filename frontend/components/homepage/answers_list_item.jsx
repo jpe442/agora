@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
-
+import CommentsContainer from './comments_container'
 
 class AnswerItem extends React.Component {
   constructor(props) {
@@ -40,13 +40,19 @@ render() {
     )
 
   return (
-    <li
-      className="answer-item"
-    >
-      <div>{buttons}</div>
+    <div>
+      <li
+        className="answer-item"
+      >
+        <div>{buttons}</div>
+        <p className="answer-content">{this.props.answer.body}</p>
 
-      <p className="answer-content">{this.props.answer.body}</p>
-    </li>
+      </li>
+      <div>Comments
+        <CommentsContainer 
+        answer={this.props.answer}/>
+      </div>
+    </div>
   );
   }
 }

@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 
-import { REMOVE_COMMENT, RECEIVE_COMMENTS, RECEIVE_COMMENTS } from '../comments/comment_actions';
+import { REMOVE_COMMENT, RECEIVE_COMMENT, RECEIVE_COMMENTS } from '../actions/comment_actions';
 
 const commentsReducer = (state = {}, action) => {
   Object.freeze(state);

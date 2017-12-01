@@ -9,7 +9,6 @@ import EditAnswerForm from './edit_answer_form'
 
 // import { toggleQEditModal } from '../../actions/ui_actions';
 
-
 class QuestionDetail extends React.Component {
   constructor(props) {
     super(props);
