@@ -11,9 +11,6 @@ export default ({ currentUser, logout, clearSessionErrors, clearSearchResults, t
   toggleSignUpModal, toggleQuestionModal,openSignUpModal, openLoginModal, 
   openQuestionModal, createQuestion, ownProps, searchQuestions}) => {
 
-
-  console.log("this is what ownProps is pointing at in navbar")
-  console.log(ownProps)
   const clearSignUpToggle = () => {
     toggleSignUpModal();
     clearSessionErrors();
@@ -38,15 +35,10 @@ export default ({ currentUser, logout, clearSessionErrors, clearSearchResults, t
         openQuestionModal={openQuestionModal}
         toggleQuestionModal={toggleQuestionModal}
        />
-
-
       <SearchBar 
         searchQuestions={searchQuestions}
         ownProps={ownProps}
       />
-    
-
-
       <div className="welcome">
         <div className= "userThumb">{currentUser.username}</div>
         <div className="authlink" onClick={handleLogout}>Exit Agora</div>

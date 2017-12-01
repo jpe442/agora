@@ -26,8 +26,6 @@ textarea {
   border-right: dotted 1px lightgray;
   color: slategray;
   font-size: 120%;
-  // overflow: scroll;
-
 }
 
 .answers-list {
@@ -45,16 +43,12 @@ textarea {
 
 .answers-list li{
   color: darkslateblue;
-  // position: absolute;
-  // left: 10%;
-  // top: 10%;
   width: 90%;
   margin-top: 10%;
   border: dotted 1px lightgray;
   border-radius: 3%;
   max-height: 20%;
   padding: 4%;
-
 }
 
 .answers-detail-main h3{
@@ -90,9 +84,6 @@ textarea {
   width: 80%;
   word-spacing: 1%;
   line-height: 160%;
-  // text-align: justify;
-  // text-justify: inter-word;
-
 }
 
 .detail-to-homepage {
@@ -186,7 +177,6 @@ textarea {
     position: absolute;
     right: 20%;
     padding: .8%;
-    // color: red;
     transition: background-color 0.4s ease;
     border: dotted 1px lightgray;
     top: 3%;
@@ -252,7 +242,6 @@ textarea {
     .comments {
       height: 10%;
       color: darkslategray;
-      // overflow: scroll;
       width: 80%;
       border-right: 1px dotted lightslategray;
     }

@@ -12,9 +12,7 @@ class QuestionDetail extends React.Component {
     super(props);
     this.openQEditModal = this.props.openQEditModal;
     this.toggleQEditModal = this.props.toggleQEditModal;
-    console.log("here in constructor checking openQEditModal")
     this.deleteQuestion = this.props.deleteQuestion.bind(this);
-    console.log(this.props.question)
     this.handleDelete = this.handleDelete.bind(this)
     this.handleEdit = this.handleEdit.bind(this)
   }

@@ -20,7 +20,6 @@ handleInput(type) {
     e.preventDefault();
     this.props.searchQuestions(this.state.queryString);
     this.props.ownProps.history.push('/homepage')
-   
     
   }
 

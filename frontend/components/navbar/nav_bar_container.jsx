@@ -7,8 +7,6 @@ import { createQuestion, clearSearchResults, searchQuestions } from '../../actio
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps)
-  console.log("above this line is what ownProps is pointing at in navbarcontainer")
   return {
   currentUser: state.session.currentUser,
   openLoginModal: state.ui.openLoginModal,
