@@ -47,6 +47,7 @@ textarea {
   display: flex;
   flex-direction: column;
   overflow: scroll;
+  border-right: 1px dotted lightslategray;
 }
 
 .answers-list li{
@@ -68,7 +69,8 @@ textarea {
 }
 
 .answer-item {
-    background-color: rgb(253, 248, 239);
+  background-color: rgb(253, 248, 239);
+  padding: 1px;
 }
 
 .answer-spot {
@@ -263,6 +265,7 @@ textarea {
       color: darkslategray;
       // overflow: scroll;
       width: 80%;
+      border-right: 1px dotted lightslategray;
     }
 
     .comments-list {
@@ -324,6 +327,7 @@ textarea {
       color: slategray;
       font-size: 30%;
       padding: .1%;
+      width: 50%;
       margin: 1%;
       background-color: rgb(253, 248, 239);
       // display: flex;

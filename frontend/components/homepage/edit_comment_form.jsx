@@ -18,7 +18,7 @@ class EditCommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const answer = Object.assign({}, this.state);
+    const comment = Object.assign({}, this.state);
     this.props.updateComment(comment)
       .then(this.props.editCommentMode({}));
   }
