@@ -6,11 +6,15 @@ import { TOGGLE_LOADING,
           TOGGLE_QUESTION_MODAL, 
           TOGGLE_QEDIT_MODAL } from '../actions/ui_actions';
 
+import {EDIT_ANSWER_MODE} from '../actions/answer_actions'
+
 const _clear= Object.freeze({
   openLoginModal: false,
   openSignUpModal: false,
   openQuestionModal: false,
   openQEditModal: false,
+  toggleEditAnswerMode: false,
+  answerToEdit: {},
 });
 
 const uiReducer = (state = _clear, action) => {
@@ -32,6 +36,11 @@ const uiReducer = (state = _clear, action) => {
       let newQEState = merge({}, state)
       newQEState.openQEditModal = !newQEState.openQEditModal;
       return newQEState;
+    case EDIT_ANSWER_MODE:
+      let newAEState = merge({}, state)
+      newAEState.answerToEdit = action.answer
+      newAEState.toggleEditAnswerMode = !newAEState.toggleEditAnswerMode
+      return newAEState;
     default:
       return state;
   }

@@ -17,7 +17,6 @@ class AskedQuestions extends React.Component {
     console.log("receiving props in asked questions");
     console.log(newProps.questions)
     this.setState(newProps.questions);
-    this.render();
   }
 
   componentDidMount() { 

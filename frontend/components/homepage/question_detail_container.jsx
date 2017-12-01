@@ -2,7 +2,7 @@ import react from 'react';
 import { connect } from 'react-redux';
 import QuestionDetail from './question_detail';
 import { fetchQuestion, deleteQuestion, updateQuestion } from '../../actions/question_actions';
-import { createAnswer, deleteAnswer, updateAnswer } from '../../actions/answer_actions';
+import { createAnswer, deleteAnswer, updateAnswer, editAnswerMode, fetchAnswers } from '../../actions/answer_actions';
 import { toggleQEditModal } from '../../actions/ui_actions';
 import { withRouter } from 'react-router-dom';
 
@@ -14,14 +14,16 @@ const mapStateToProps = (state, ownProps) => {
   // }else{
   //   let openEditQuestionModal = state.ui.openQEditModal;
   // }
-
-  console.log(state.ui.openQEditModal)
-  console.log("above is status of openQEditModal")
-  console.log(state.ui.openQEditModal)
+  
+  console.log(updateAnswer)
+  console.log("above is status of updateAnswer in question detail container")
   return {
   openQEditModal: state.ui.openQEditModal,
   currentUser: state.session.currentUser,
   question: state.questions[ownProps.match.params.questionId],
+  answerToEdit: state.ui.answerToEdit,
+  toggleEditAnswerMode: state.ui.toggleEditAnswerMode,
+  answers: state.answers
   // questions: state.questions
 }}
 
@@ -32,7 +34,9 @@ const mapDispatchToProps = (dispatch) => ({
   toggleQEditModal: () => dispatch(toggleQEditModal()),
   createAnswer: answer => dispatch(createAnswer(answer)),
   deleteAnswer: id => dispatch(deleteAnswer(id)),
-  updateAnswer: answer => dispatch(updateAnswer(answer))
+  updateAnswer: answer => dispatch(updateAnswer(answer)),
+  editAnswerMode: answer => dispatch(editAnswerMode(answer)),
+  fetchAnswers: () => dispatch(fetchAnswers()),
 })
 
 export default withRouter(connect(

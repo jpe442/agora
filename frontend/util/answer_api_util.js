@@ -27,10 +27,10 @@ export const deleteAnswer = (id) => (
   })
 )
 
-export const updateAnswer = answer => (
-  $.ajax({
+export const updateAnswer = answer => {
+  return $.ajax({
     method: 'PATCH',
-    url: 'api/answer/' + answer.id,
+    url: 'api/answers/' + answer.id,
     data: { answer }
-  })
-);
+  }
+)};

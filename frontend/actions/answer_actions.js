@@ -5,6 +5,7 @@ import * as AnswerAPIUtil from '../util/answer_api_util'
 export const RECEIVE_ANSWERS = 'RECEIVE_ANSWERS';
 export const RECEIVE_ANSWER = 'RECEIVE_ANSWER';
 export const REMOVE_ANSWER = 'REMOVE_ANSWER';
+export const EDIT_ANSWER_MODE = 'EDIT_ANSWER_MODE'
 
 // thunks 
 
@@ -50,4 +51,8 @@ const removeAnswer = (answerId) => ({
   answerId
 })
 
+export const editAnswerMode = (answer) => ({
+  type: EDIT_ANSWER_MODE,
+  answer
+})
 

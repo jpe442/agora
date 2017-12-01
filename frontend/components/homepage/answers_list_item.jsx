@@ -1,37 +1,61 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
-export default ({ answer, currentUser, deleteAnswer, updateAnswer }) => {
 
-  const handleDelete = (e) => {
+class AnswerItem extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleDelete = this.handleDelete.bind(this)
+    this.handleEdit = this.handleEdit.bind(this)
+  }
+
+
+  // componentWillReceiveProps(newProps) {
+  //   this.setState(newProps.answer)
+  // }
+
+
+  handleDelete(e) {
     e.preventDefault(e);
-    deleteAnswer(answer.id)
+    this.props.deleteAnswer(this.props.answer.id)
   };
 
-  
-  const handleEdit = (e) => {
+
+  handleEdit(e) {
     e.preventDefault(e);
-    console.log(updateAnswer)
-    updateAnswer(answer.id)
-  };
+    this.props.editAnswerMode(this.props.answer)
+  };  
 
-  const buttons = currentUser.id === answer.rhetor_id ? (
-    <div className="rhetor-view">
-      <div onClick={handleEdit} className="answer-detail-edit-btn">Edit Answer</div>
-      <div onClick={handleDelete} className="answer-delete">Rescind Answer</div>
-    </div>
 
+render() {
+
+  const buttons = this.props.currentUser.id === this.props.answer.rhetor_id ? (
+  <div className="rhetor-view">
+    <div onClick={this.handleEdit} className="answer-edit">Edit Answer</div>
+    <div onClick={this.handleDelete} className="answer-delete">Rescind Answer</div>
+  </div>
   ) : (
       <div></div>
     )
 
   return (
-      <li
-        className="answer-item"
-      >
+    <li
+      className="answer-item"
+    >
       <div>{buttons}</div>
 
-        <p className="answer-content">{answer.body}</p>
-      </li>
+      <p className="answer-content">{this.props.answer.body}</p>
+    </li>
   );
+  }
 }
+
+
+export default AnswerItem;
+
+  
+
+  
+
+
