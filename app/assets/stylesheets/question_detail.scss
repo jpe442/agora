@@ -2,12 +2,12 @@ textarea {
   resize: none;
 }
 
-.question-detail {
-  // width: 100%;
-  // height: 100%;
-  // display: flex;
-  // flex-direction: column;
-}
+// .question-detail {
+//   // width: 100%;
+//   // height: 100%;
+//   // display: flex;
+//   // flex-direction: column;
+// }
 
 .question-detail-main {
   display: flex;
@@ -40,7 +40,7 @@ textarea {
   color: red;
   position: absolute;
   left: 0%;
-  top: 20%;
+  top: 25%;
   width: 90%;
   height: 80%;
   display: flex;
@@ -208,7 +208,7 @@ textarea {
 
     .answer-delete {
       font-family: helvetica;
-      border: red 1px solid;
+      border: red .2px dotted;
       width: 25%;
       top: 10%;
       font-size: 50%;
@@ -228,7 +228,7 @@ textarea {
 
     .answer-edit {
       color: darkslategray;
-      border: dotted 1px lightgray;
+      border: dotted 1px gray;
       width: 20%;
       top: 10%;
       font-size: 50%;

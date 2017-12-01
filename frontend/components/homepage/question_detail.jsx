@@ -23,9 +23,9 @@ class QuestionDetail extends React.Component {
     this.handleEdit = this.handleEdit.bind(this)
   }
 
-  // componentDidMount() {
-  //   this.props.fetchAnswers();
-  // }
+  componentDidMount() {
+    this.props.fetchAnswers();
+  }
 
   componentWillReceiveProps(newProps) {
     console.log("about to receive props from reup")
@@ -52,6 +52,7 @@ class QuestionDetail extends React.Component {
     // console.log(this.props.question.id)
     console.log(this.openQEditModal)
     console.log("above is status of openQEditModal 2")
+    const answers = Object.values(this.props.answers).filter(answer => answer.question_id === this.props.question.id)
     const sessionForm = this.props.toggleEditAnswerMode ? <EditAnswerForm 
                                                   updateAnswer={this.props.updateAnswer}
                                                   currentUser={this.props.currentUser}
@@ -96,7 +97,7 @@ class QuestionDetail extends React.Component {
             {console.log(this.props.question.answers)}
 
               {
-              Object.values(this.props.answers).map(answer => 
+              answers.map(answer => 
               <AnswerItem key={answer.id} 
               answer={answer}
               editAnswerMode={this.props.editAnswerMode}

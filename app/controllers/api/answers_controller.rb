@@ -23,8 +23,13 @@ class Api::AnswersController < ApplicationController
     elsif
       render json: ['Could not locate answer'], status: 400
     else
-      render json: @question.errors.full_messages, status: 401
+      render json: @answer.errors.full_messages, status: 401
     end
+  end
+
+  def index
+    @answers = Answer.all
+    render :index
   end
 
   private

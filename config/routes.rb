@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create, :index]
     resources :questions
     resources :answers
+    resources :comments
   end
 
   root "static_pages#root"
