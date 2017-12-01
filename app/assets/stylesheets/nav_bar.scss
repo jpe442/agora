@@ -90,6 +90,7 @@
   vertical-align: middle;
 }
 
+
 .authModal {
   border-radius: 2%;
   display: flex;
@@ -193,4 +194,8 @@
   flex-direction: row;
   width: 20%;
 
+}
+
+.search-bar-input {
+  border: dotted 1px lightgray;
 }

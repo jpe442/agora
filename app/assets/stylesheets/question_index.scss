@@ -16,14 +16,14 @@
 
 .question-item {
   border: dotted 1px rgba(210, 205, 205, 1);
-  background-color: rgba(250, 245, 238, .5);
+  background-color: rgba(255, 254, 254, 0.5);
   // display: inline-block;
   // position: absolute;
   // vertical-align: middle;
   left: 80%;
   height: 5%;
   max-height: 5%;
-  overflow: auto;
+  overflow: hidden;
   // justify-content: center;
   // align-items: center;  
   margin: 3%;

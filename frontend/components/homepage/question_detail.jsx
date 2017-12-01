@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import EditQuestionFormContainer from './edit_question_container'
 import Modal from 'react-modal';
 import AnswerItem from './answers_list_item'
+import CreateAnswerForm from './create_answer_form'
 // import { toggleQEditModal } from '../../actions/ui_actions';
 
 
 class QuestionDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.currentUser = this.props.currentUser;
     this.openQEditModal = this.props.openQEditModal;
     this.state = this.props.question;
     this.toggleQEditModal = this.props.toggleQEditModal;
@@ -50,7 +50,8 @@ class QuestionDetail extends React.Component {
     // console.log(this.props.question.id)
     console.log(this.openQEditModal)
     console.log("above is status of openQEditModal 2")
-    const buttons = this.currentUser.id === this.state.interlocutor_id ? (
+    
+    const buttons = this.props.currentUser.id === this.state.interlocutor_id ? (
       <div className="interlocutor-view">
         <div onClick={this.handleEdit} className="question-detail-edit-btn">Edit Question</div>
         <div onClick={this.handleDelete} className="question-detail-delete">Rescind Question</div>
@@ -60,6 +61,7 @@ class QuestionDetail extends React.Component {
       <div></div>
     )
        
+
     return (
       <div className="question-detail">
         <div className="question-detail-main">
@@ -74,10 +76,21 @@ class QuestionDetail extends React.Component {
         
         <div className="answers-detail-main">
           <h3>Answers to This Question</h3>
+          <CreateAnswerForm 
+          createAnswer={this.props.createAnswer}
+          currentUser={this.props.currentUser}
+          question={this.props.question}
+          
+
+          />
           <ul className="answers-list">
               {
               this.state.answers.map(answer => 
-              <AnswerItem key={answer.id} answer={answer}/>
+              <AnswerItem key={answer.id} 
+              answer={answer}
+              currentUser={this.props.currentUser}
+              deleteAnswer={this.props.deleteAnswer}
+              />
               ) 
             }
           </ul>

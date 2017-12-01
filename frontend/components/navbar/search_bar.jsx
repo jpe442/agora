@@ -30,6 +30,7 @@ handleInput(type) {
       <div className="search-bar">
         <form onSubmit={this.handleSubmit}>
           <input type="text"
+              className="search-bar-input"
               placeholder="Search Agora..."
               value={this.state.queryString}
               onChange={this.handleInput('queryString')} />
