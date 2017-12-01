@@ -7,13 +7,10 @@ import AnswerItem from './answers_list_item'
 import CreateAnswerForm from './create_answer_form'
 import EditAnswerForm from './edit_answer_form'
 
-// import { toggleQEditModal } from '../../actions/ui_actions';
-
 class QuestionDetail extends React.Component {
   constructor(props) {
     super(props);
     this.openQEditModal = this.props.openQEditModal;
-    // this.state = this.props.question;
     this.toggleQEditModal = this.props.toggleQEditModal;
     console.log("here in constructor checking openQEditModal")
     this.deleteQuestion = this.props.deleteQuestion.bind(this);
@@ -27,7 +24,6 @@ class QuestionDetail extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log("about to receive props from reup")
     this.openQEditModal = newProps.openQEditModal;
     this.setState(newProps.question);
   }
@@ -35,22 +31,14 @@ class QuestionDetail extends React.Component {
   handleDelete(e) {
     e.preventDefault(e);
     this.deleteQuestion(this.props.quesiton.id)
-      .then(console.log("testing thunk middlemarks"))
       .then(() => this.props.history.push('/homepage'));
   };
 
   handleEdit(e) {
-    // console.log("in handleEdit")
-    // console.log(this)
     e.preventDefault(e);
     this.toggleQEditModal()
   };
   render() {
-    console.log(this.props.toggleEditAnswerMode)
-    console.log("here in question detail yo yo")
-    // console.log(this.props.question.id)
-    console.log(this.openQEditModal)
-    console.log("above is status of openQEditModal 2")
     const answers = Object.values(this.props.answers).filter(answer => answer.question_id === this.props.question.id)
     const sessionForm = this.props.toggleEditAnswerMode ? <EditAnswerForm 
                                                   updateAnswer={this.props.updateAnswer}
@@ -80,7 +68,6 @@ class QuestionDetail extends React.Component {
       <div className="question-detail">
         <div className="question-detail-main">
           <div>{buttons}</div>
-          {console.log("kk")}
           <h2 className="question-detail-title">{this.props.question.title}</h2>
           <h3 className="interlocutor-name">Interlocutor: {this.props.question.interlocutor.username}</h3>
           <p className="question-detail-body">{this.props.question.body}</p>
@@ -92,11 +79,10 @@ class QuestionDetail extends React.Component {
           <h3>Answers to This Question</h3>
           {sessionForm}
           <ul className="answers-list">
-            {console.log("here is answers list next")}
-            {console.log(this.props.question.answers)}
+
 
               {
-              answers.map(answer => 
+              answers.reverse().map(answer => 
               <AnswerItem 
               className="answer-spot"
               key={answer.id} 

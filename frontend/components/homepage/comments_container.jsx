@@ -5,10 +5,6 @@ import { updateComment, createComment, fetchComment, fetchComments, deleteCommen
 import Comments from './comments'
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("here in comments container")
-  console.log(state)
-  console.log("checking ownProps for answer")
-  console.log(ownProps)
   return {
     currentUser: state.session.currentUser,
     answer: ownProps.answer,

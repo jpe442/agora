@@ -32,8 +32,6 @@ class EditCommentForm extends React.Component {
   render() {
 
     const { message } = this.state;
-    console.log("Message here")
-    console.log(message)
 
     return (
       <div>

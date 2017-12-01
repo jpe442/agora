@@ -20,8 +20,7 @@ handleInput(type) {
     e.preventDefault();
     this.props.searchQuestions(this.state.queryString);
     this.props.ownProps.history.push('/homepage')
-    console.log("here in searchbar handleSubmit, next line this.props")
-    console.log(this.props)
+   
     
   }
 

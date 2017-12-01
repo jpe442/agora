@@ -39,7 +39,7 @@ class Comments extends React.Component {
       <ul className="comments-list">
 
         {
-          comments.map(comment =>
+          comments.reverse().map(comment =>
             <CommentItem 
               key={comment.id}
               comment={comment}

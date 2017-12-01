@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import CommentsContainer from './comments_container'
 
 class AnswerItem extends React.Component {
@@ -9,12 +8,6 @@ class AnswerItem extends React.Component {
     this.handleDelete = this.handleDelete.bind(this)
     this.handleEdit = this.handleEdit.bind(this)
   }
-
-
-  // componentWillReceiveProps(newProps) {
-  //   this.setState(newProps.answer)
-  // }
-
 
   handleDelete(e) {
     e.preventDefault(e);

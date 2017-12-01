@@ -3,8 +3,6 @@ import React from 'react';
 class CreateCommentForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log("here in createcommentform")
-    console.log(this.props)
     this.state = {
       message: "",
       answer_id: this.props.answer.id,
