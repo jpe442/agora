@@ -29,8 +29,8 @@ user3 = User.create!(
 )
 
 user4 = User.create!(
-  :username => "randophil",
-  :password => "password",
+  :username => "guest",
+  :password => "guestpassword",
   :email => "rando@rando.com"
 )
 
