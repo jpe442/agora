@@ -33,6 +33,7 @@ textarea {
   border-right: dotted 1px lightgray;
   color: slategray;
   font-size: 120%;
+  // overflow: scroll;
 
 }
 
@@ -67,8 +68,12 @@ textarea {
 }
 
 .answer-item {
+    background-color: rgb(253, 248, 239);
 }
 
+.answer-spot {
+  height: 20px;
+}
 .question-detail-title {
   border-bottom: dotted 1px lightgray;
   color: darkslategray;
@@ -152,6 +157,7 @@ textarea {
   color: slategray;
   border: dotted 1px lightgray;
   font-family: helvetica;
+  background-color: rgb(253, 248, 239);
   left: 38%;
   font-size: 80%;
   display: flex;
@@ -210,6 +216,7 @@ textarea {
       font-family: helvetica;
       border: red .2px dotted;
       width: 25%;
+      background-color: #FFFAF0;
       top: 10%;
       font-size: 50%;
       padding: .4%;
@@ -232,6 +239,7 @@ textarea {
       width: 20%;
       top: 10%;
       font-size: 50%;
+      background-color: rgb(252, 252, 252);
       font-family: helvetica;
       padding: .4%;
       margin-bottom: 5%;
@@ -246,3 +254,108 @@ textarea {
       }
     }
   
+    // .comments-list {
+    //   height: 20%;
+    // }
+
+    .comments {
+      height: 10%;
+      color: darkslategray;
+      // overflow: scroll;
+      width: 80%;
+    }
+
+    .comments-list {
+      color: darkslategray;
+      height: 100px;
+      overflow: scroll;
+    }
+
+    .new-comment-form {
+      color: darkslategray;
+
+    }
+    .comment-delete {
+      color: red; 
+      font-size: 50%;
+      background-color: rgb(253, 248, 239);
+      font-family: helvetica;
+      right: 5%;
+      padding: .5%;
+      border: dotted 1px gray;
+      display: flex;
+      justify-content: center;
+      width: 10%;
+      height: 100%;
+
+        &:hover {
+          cursor: pointer;
+          color: #FFFAF0;
+          background-color: red;
+
+      }
+    }
+
+    .comment-edit {
+      color: darkslategray; 
+      font-size: 50%;
+      background-color: rgb(253, 248, 239);
+      font-family: helvetica;
+      padding: .5%;
+      border: dotted 1px gray;
+      display: flex;
+      justify-content: center;
+      width: 10%;
+      height: 100%;
+
+        &:hover {
+          cursor: pointer;
+          color: #FFFAF0;
+          background-color: darkslategray;
+
+      }
+    }
+
+    .comment-content {
+      // position: absolute;
+      // left: 20%;
+    }
+    .comment-item {
+      color: slategray;
+      font-size: 30%;
+      padding: .1%;
+      margin: 1%;
+      background-color: rgb(253, 248, 239);
+      // display: flex;
+      // justify-content: space-around;
+
+    }
+
+    .comment-submit-btn {
+      color: darkslategray; 
+      font-size: 50%;
+      background-color: rgb(253, 248, 239);
+      font-family: helvetica;
+      padding: 1%;
+      border: dotted 1px gray;
+      display: flex;
+      justify-content: center;
+      width: 20%;
+
+       &:hover {
+          cursor: pointer;
+          color: #FFFAF0;
+          background-color: darkslategray;
+
+      }
+
+    }
+
+    .comments-list-title {
+      margin: 5%;
+      font-size: 70%;
+    }
+
+    .new-comment-input {
+      border: dotted 1px gray;
+    }

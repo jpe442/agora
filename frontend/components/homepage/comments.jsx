@@ -9,6 +9,9 @@ class Comments extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.fetchComments();
+  }
 
   componentWillReceiveProps(newProps) {
     this.setState(newProps.toggleEditAnswerMode)

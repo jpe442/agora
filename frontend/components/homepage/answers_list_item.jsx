@@ -48,7 +48,8 @@ render() {
         <p className="answer-content">{this.props.answer.body}</p>
 
       </li>
-      <div>Comments
+      <div className="comments">
+      <div className="comments-list-title">Comments for this Answer</div>
         <CommentsContainer 
         answer={this.props.answer}/>
       </div>

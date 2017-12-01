@@ -31,7 +31,7 @@ class CreateCommentForm extends React.Component {
       <div>
         <form className="new-comment-form" >
           <textarea
-            rows="5" cols="80"
+            rows="2" cols="50"
             className="new-comment-input"
             placeholder="Add comment here..."
             value={message}

@@ -97,7 +97,9 @@ class QuestionDetail extends React.Component {
 
               {
               answers.map(answer => 
-              <AnswerItem key={answer.id} 
+              <AnswerItem 
+              className="answer-spot"
+              key={answer.id} 
               answer={answer}
               editAnswerMode={this.props.editAnswerMode}
               currentUser={this.props.currentUser}
