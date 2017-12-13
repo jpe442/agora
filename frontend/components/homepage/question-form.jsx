@@ -3,8 +3,6 @@ import React from 'react';
 class QuestionForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log("below this is what props is pointing at")
-    console.log(this.props)
     this.state = {
       title: "",
       body: "",

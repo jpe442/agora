@@ -28,7 +28,7 @@ class QuestionDetail extends React.Component {
   
   handleDelete(e) {
     e.preventDefault(e);
-    this.deleteQuestion(this.props.quesiton.id)
+    this.deleteQuestion(this.props.question.id)
       .then(() => this.props.history.push('/homepage'));
   };
 
