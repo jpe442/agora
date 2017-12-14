@@ -27,9 +27,11 @@ class QuestionDetail extends React.Component {
   }
   
   handleDelete(e) {
+    console.log("about to show question for deletion")
+    console.log(this.props.question)
     e.preventDefault(e);
-    this.deleteQuestion(this.props.question.id)
-      .then(() => this.props.history.push('/homepage'));
+    this.deleteQuestion(this.props.question.id);
+    this.props.history.push('/homepage');
   };
 
   handleEdit(e) {
