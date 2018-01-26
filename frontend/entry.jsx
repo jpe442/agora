@@ -8,14 +8,15 @@ import {createAnswer} from './actions/answer_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   Modal.setAppElement(document.body);
-  let store;
+  let preloadedState = undefined;
   if (window.currentUser) {
-    const preloadedState = { session: { currentUser: window.currentUser } };
-    store = configureStore(preloadedState);
-    delete window.currentUser;
-  } else {
-    store = configureStore();
+    preloadedState = {
+      session: {
+        currentUser: window.currentUser
+      }
+    };
   }
+  const store = configureStore(preloadedState);
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;

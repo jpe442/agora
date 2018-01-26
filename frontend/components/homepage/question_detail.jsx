@@ -8,6 +8,7 @@ import CreateAnswerForm from './create_answer_form'
 import EditAnswerForm from './edit_answer_form'
 
 class QuestionDetail extends React.Component {
+
   constructor(props) {
     super(props);
     this.openQEditModal = this.props.openQEditModal;
@@ -27,8 +28,6 @@ class QuestionDetail extends React.Component {
   }
   
   handleDelete(e) {
-    console.log("about to show question for deletion")
-    console.log(this.props.question)
     e.preventDefault(e);
     this.deleteQuestion(this.props.question.id);
     this.props.history.push('/homepage');
@@ -39,6 +38,8 @@ class QuestionDetail extends React.Component {
     this.toggleQEditModal()
   };
   render() {
+    console.log("rendering")
+    console.log(this.props.currentUser)
     const answers = Object.values(this.props.answers).filter(answer => answer.question_id === this.props.question.id)
     const sessionForm = this.props.toggleEditAnswerMode ? <EditAnswerForm 
                                                   updateAnswer={this.props.updateAnswer}

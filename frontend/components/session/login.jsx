@@ -22,8 +22,9 @@ class Login extends React.Component {
     e.preventDefault(e);
     this.props.login(this.state)
       .then(() => this.props.toggleLoginModal())
-        .then(() => this.props.history.push('/homepage'))
           .then(() => this.props.clearSessionErrors())
+            .then(() => this.props.history.push('/homepage'))
+
   };  
 
   handleGuest(e) {

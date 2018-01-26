@@ -27,8 +27,6 @@ class QuestionForm extends React.Component {
 
   render() {
     const { title, body } = this.state;
-    console.log("this below is what this slice of state is pointing at")
-    console.log(this.state)
     return (
       <div className="new-form-container">
         <div className="new-form">
@@ -56,9 +54,6 @@ class QuestionForm extends React.Component {
           </form>
 
         </div>
-            
-      
-      
       
       </div>
     )

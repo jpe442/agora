@@ -15,15 +15,15 @@ const mapStateToProps = (state, ownProps) => {
   //   let openEditQuestionModal = state.ui.openQEditModal;
   // }
   
-  console.log(updateAnswer)
-  console.log("above is status of updateAnswer in question detail container")
+  console.log(state.session.currentUser)
+  console.log("above is currentUser")
   return {
-  openQEditModal: state.ui.openQEditModal,
-  currentUser: state.session.currentUser,
-  question: state.questions[ownProps.match.params.questionId],
-  answerToEdit: state.ui.answerToEdit,
-  toggleEditAnswerMode: state.ui.toggleEditAnswerMode,
-  answers: state.answers
+    openQEditModal: state.ui.openQEditModal,
+    currentUser: state.session.currentUser,
+    question: state.questions[ownProps.match.params.questionId],
+    answerToEdit: state.ui.answerToEdit,
+    toggleEditAnswerMode: state.ui.toggleEditAnswerMode,
+    answers: state.answers
   // questions: state.questions
 }}
 

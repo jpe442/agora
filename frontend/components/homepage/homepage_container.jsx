@@ -5,14 +5,14 @@ import HomePage from './question_index.jsx';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => ({
-
+  questions: this.state.questions,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-
+  fetchQuestions: () => dispatch(fetchQuestions()),
 })
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomePage)
+)(HomePage))

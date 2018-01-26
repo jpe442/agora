@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Agora</title>
-  <%= csrf_meta_tags %>
+  <head>
+    <title>Agora</title>
+    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-      <%= javascript_include_tag 'application' %>
-        <% if current_user %>
-          <script>
-            window.currentUser = {
-              "id": "<%= current_user.id %>",
-              "username": "<%= current_user.username %>"
-            };
-          </script>
+      <%= stylesheet_link_tag 'application', media: 'all' %>
+        <%= javascript_include_tag 'application' %>
+          <% if current_user %>
+            <script>
+              window.currentUser = {
+                "id": <%= current_user.id %>,
+                "username": "<%= current_user.username %>"
+              };
+            </script>
           <% end %>
-            <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-</head>
+              <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  </head>
 
-<body>
-  <%= yield %>
-</body>
+  <body>
+    <%= yield %>
+  </body>
 
 </html>
